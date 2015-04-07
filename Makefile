@@ -1,7 +1,8 @@
 SRC = $(wildcard *.cpp)
 OUT = $(SRC:.cpp=)
 
-CXXFLAGS = -O3 -pedantic -Wall -Wextra
+CXXFLAGS = -std=c++11 -O3 -pedantic -Wall -Wextra -Werror
+LDLIBS = -lboost_program_options
 
 all: $(OUT)
 
