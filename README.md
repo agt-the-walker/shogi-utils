@@ -33,6 +33,12 @@ This script prints Shogi22680 positions with optional restrictions.
     $ ./shuffle-first-row --protect-more | wc -l
     8262
 
+    # the second position is the standard Shogi starting one
+    $ ./shuffle-first-row --protect | grep SGKGS
+    LLNSGKGSN
+    LNSGKGSNL
+    NSGKGSNLL
+
     # shows a few Shogi22680 positions not listed with --protect
     $ diff <(./shuffle-first-row) <(./shuffle-first-row --protect) | \
       grep '^<' | cut -c3- | shuf -n 3
