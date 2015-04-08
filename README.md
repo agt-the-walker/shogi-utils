@@ -2,7 +2,7 @@
 
 ## shuffle-first-row
 
-This script prints Shogi22680 positions with optional restrictions.
+This program prints Shogi22680 positions with optional restrictions.
 
 
 # Requirements
