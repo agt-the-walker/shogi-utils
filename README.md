@@ -33,6 +33,11 @@ This program prints Shogi22680 positions with optional restrictions.
     $ ./shuffle-first-row --protect-more | wc -l
     8262
 
+    # additional restriction: don't put a lance behind pawns most likely
+    #  to be pushed during sente's first move
+    $ ./shuffle-first-row --protect-more | grep '^..[^L].[^L]..[^L].' | wc -l
+    3798
+
     # the second position is the standard Shogi starting one
     $ ./shuffle-first-row --protect | grep SGKGS
     LLNSGKGSN
