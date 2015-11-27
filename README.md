@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/agt-the-walker/shogi-utils.svg?branch=master)](https://travis-ci.org/agt-the-walker/shogi-utils)
+
 # Purpose
 
 ## shuffle-first-row
