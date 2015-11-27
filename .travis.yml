@@ -1,4 +1,7 @@
 language: cpp
 script: make
+before_install:
+  - sudo apt-get update -qq
+  - sudo apt-get install -y libboost-program-options-dev
 sudo: required
 dist: trusty
