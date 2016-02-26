@@ -14,7 +14,7 @@
 | 銀    | FfW   | 全      |       |
 | 桂    | ffN   | 圭      |       |
 | 香    | fR    | 杏      |       |
-| 歩    | fW    | と(个)  | 2,3   |
+| 歩    | fW    | と(个)  | 2, 3  |
 
 1. Royal piece
 2. Only one per column
@@ -45,7 +45,7 @@ Uses the following pieces from shogi: 王 (as 靏), 歩
 | ----- | -------- | ------- | ----- |
 | 鷲    | fbRfB3K  |         |       |
 | 狐    | fbWFfbDA |         |       |
-| 鷹    | fWB      | 鶏      | 1     |
+| 鷹    | fWB      | 鶏      |       |
 | 兎    | fRFbW    | 狐      |       |
 | 狼    | WfF      | 熊      |       |
 | 鹿    | FfW      | 猪      |       |
@@ -87,7 +87,7 @@ Uses the following pieces from shogi: 王 (as 鵬)
 | 雉    | fDbF     |         |       |
 | 左    | fRbrBblF |         | 2     |
 | 右    | fRblBbrF |         | 2     |
-| 燕    | fW       | 鴈      | 3,4   |
+| 燕    | fW       | 鴈      | 3, 4  |
 
 1. Wikipedia uses 鷹 instead but this piece is different in Wa shogi
 2. Wikipedia uses 鶉 for both but this is confusing
