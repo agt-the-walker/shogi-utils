@@ -5,6 +5,7 @@ since I hate studying openings. For this reason, I'd like to try
 [other board sizes and pieces](cheatsheet.md).
 
 IMHO, a good Shogi variant:
+
 1. shouldn't be more drawish than Chess
 2. shouldn't give the first player an advantage greater than in Chess
 3. shouldn't last more than twice as long as the average Chess game (in plies)
