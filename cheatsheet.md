@@ -109,7 +109,7 @@ Uses the following pieces from shogi: 王 (as 鵬)
 # Okisaki shogi
 
 * Size: 10x10
-* Promotion zone: 3
+* Promotion zone: 3 farthest ranks
 
 Uses the following pieces from shogi: 王, 飛, 角, 金, 銀, 歩
 
