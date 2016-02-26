@@ -1,7 +1,5 @@
-# Scope
-
-I'm only interested in shogi variants with drops, and whose board size doesn't
-differ too much from regular shogi.
+I only list shogi variants with drops, and whose board size doesn't differ too
+much from regular shogi.
 
 
 # Shogi
