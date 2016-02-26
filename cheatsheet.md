@@ -1,5 +1,5 @@
 I only list shogi variants with drops, and whose board size doesn't differ too
-much from regular shogi.
+much from regular shogi, for the reasons described in [this page](variants.md).
 
 
 # Shogi
