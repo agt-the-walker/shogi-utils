@@ -1,3 +1,9 @@
+# Scope
+
+I'm only interested in shogi variants with drops, and whose board size doesn't
+differ too much from regular shogi.
+
+
 # Shogi
 
 * Size: 9x9
@@ -12,8 +18,8 @@
 | 角    | B     | 馬      |       |
 | 金    | WfF   |         |       |
 | 銀    | FfW   | 全      |       |
-| 桂    | ffN   | 圭(今)  |       |
-| 香    | fR    | 杏(仝)  |       |
+| 桂    | ffN   | 圭      |       |
+| 香    | fR    | 杏      |       |
 | 歩    | fW    | と(个)  | 2, 3  |
 
 1. Royal piece
@@ -100,3 +106,29 @@ Uses the following pieces from shogi: 王 (as 鵬)
 | ----- | -------- |
 | 鵰    | fBbRWbB2 |
 | 鴈    | fAbD     |
+
+
+# Okisaki shogi
+
+* Size: 10x10
+* Promotion zone: 3
+
+Uses the following pieces from shogi: 王, 飛, 角, 金, 銀, 歩
+
+## Extra initial pieces
+
+| Piece | Betza    | Promote | Notes |
+| ----- | -------- | ------- | ----- |
+| 妃    | Q        |         |       |
+| 跳    | N        | 今      |       |
+| 反    | fbR      | 仝      | 1     |
+
+1. This piece promotes differently in Chu shogi. Unfortunately I couldn't use
+香 or 車 (different pieces in regular and Wa shogi).
+
+## Promoted pieces
+
+| Piece | Betza |
+| ----- | ----- |
+| 今    | WfF   |
+| 仝    | WfF   |
