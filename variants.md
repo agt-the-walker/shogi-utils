@@ -1,4 +1,4 @@
-I like Shogi, but I also like other abstracts such as Arimaa, Chess and
+I like Shogi, but I also like other abstracts such as Arimaa and
 especially [Capablanca Random Chess](http://brainking.com/en/GameRules?tp=75),
 since I hate studying openings. For this reason, I'd like to try
 [Shogi22680](README.md), but I'm also interested in
