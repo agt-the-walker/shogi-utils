@@ -8,8 +8,8 @@ IMHO, a good Shogi variant:
 
 1. shouldn't be more drawish than Chess
 2. shouldn't give the first player an advantage greater than in Chess
-3. shouldn't last more than twice as long as the average Chess game (in plies)
-4. shouldn't require studying opening theory (principles are fine though)
+3. shouldn't require studying opening theory (principles are fine though)
+4. shouldn't last more than twice as long as the average Chess game (in plies)
 5. shouldn't be more difficult to learn than
    [Wa Shogi](https://en.wikipedia.org/wiki/Wa_shogi)
 
