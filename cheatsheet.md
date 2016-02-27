@@ -9,16 +9,16 @@ much from regular shogi, for the reasons described in [this page](variants.md).
 
 ## Initial pieces
 
-| Piece | Betza | Promote | Notes |
-| ----- | ----- | ------- | ----- |
-| 王(玉)| K     |         | 1     |
-| 飛    | R     | 龍(竜)  |       |
-| 角    | B     | 馬      |       |
-| 金    | WfF   |         |       |
-| 銀    | FfW   | 全      |       |
-| 桂    | ffN   | 圭      |       |
-| 香    | fR    | 杏      |       |
-| 歩    | fW    | と(个)  | 2, 3  |
+| Piece | Name   | Betza | Promote | Notes |
+| ----- | ------ | ----- | ------- | ----- |
+| 王(玉)| King   | K     |         | 1     |
+| 飛    | Rook   | R     | 龍(竜)  |       |
+| 角    | Bishop | B     | 馬      |       |
+| 金    | Gold   | WfF   |         |       |
+| 銀    | Silver | FfW   | 全      |       |
+| 桂    | Knight | ffN   | 圭      |       |
+| 香    | Lance  | fR    | 杏      |       |
+| 歩    | Pawn   | fW    | と(个)  | 2, 3  |
 
 1. Royal piece
 2. Only one per column
@@ -26,14 +26,14 @@ much from regular shogi, for the reasons described in [this page](variants.md).
 
 ## Promoted pieces
 
-| Piece | Betza |
-| ----- | ----- |
-| 龍    | FR    |
-| 馬    | WB    |
-| 全    | WfF   |
-| 圭    | WfF   |
-| 杏    | WfF   |
-| と    | WfF   |
+| Piece | Name   | Betza |
+| ----- | ------ | ----- |
+| 龍    | Dragon | FR    |
+| 馬    | Horse  | WB    |
+| 全    |        | WfF   |
+| 圭    |        | WfF   |
+| 杏    |        | WfF   |
+| と    | Tokin  | WfF   |
 
 
 # Wa shogi
