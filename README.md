@@ -4,7 +4,8 @@
 
 ## shuffle-first-row
 
-This program prints Shogi22680 positions with optional restrictions.
+This program prints Shogi22680 positions with optional restrictions. K = King,
+N = Knight, etc.
 
 
 # Requirements
