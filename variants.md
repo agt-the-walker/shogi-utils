@@ -30,7 +30,7 @@ on second row protected), which is acceptable.
 
 What if we only swap two pieces in the first row? In this case, we only have 33
 different starting positions, which is not enough. However if we also replace a
-random piece in the first row (except the royal piece, obviously) by a random
+random piece in the first row (except the King, obviously) by a random
 one introduced in Okisaki Shogi, then we get 33 * 8 * 3 = 792 different
 starting positions.
 
