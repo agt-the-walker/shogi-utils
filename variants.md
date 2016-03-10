@@ -22,7 +22,7 @@ larger board variants) probably takes too long and is also too difficult to
 learn.
 
 Let's get back to opening theory. If at the start of a game, each starting
-position has 1% (or less) chance of occurring. then we have probably succeeded
+position has 1% (or less) chance of occurring, then we have probably succeeded
 in rendering its study pointless. Shogi22680 is an obvious possibility, but
 there are others. For instance, swapping the positions of only three pieces in
 the first row produces 145 different starting positions (111 with all squares
