@@ -135,7 +135,7 @@ Uses the following pieces from shogi: 王, 飛, 角, 金, 銀, 歩
 # SFEN notation
 
 [Forsyth-Edwards notation for shogi](http://shogi.typepad.jp/brainstorm/2007/01/post_11a0.html)
-can be used. For non-standard pieces:
-* {RR}: sente's 兎 (RR) in Wa shogi
-* {R}: sente's 右 (R) in Tori shogi
-* {n}: gote's 跳 (N) in Okisaki shogi
+can be used. Non-standard pieces will be enclosed by braces. For instance:
+* {RR}: sente's 兎 (RR) from Wa shogi
+* {R}: sente's 右 (R) from Tori shogi
+* {n}: gote's 跳 (N) from Okisaki shogi
