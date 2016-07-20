@@ -1,5 +1,5 @@
 I only list shogi variants with drops, and whose board size doesn't differ too
-much from regular shogi, for the reasons described in [this page](README.md).
+much from standard shogi, for the reasons described in [this page](README.md).
 
 
 # Shogi
@@ -122,7 +122,7 @@ Uses the following pieces from shogi: 王, 飛, 角, 金, 銀, 歩
 | 反    | A    | fbR      | 仝      | 1     |
 
 1. This piece promotes differently in Chu shogi. Unfortunately I couldn't use
-香 or 車 (different pieces in regular and Wa shogi).
+香 or 車 (different pieces in standard and Wa shogi).
 
 ## Promoted pieces
 
