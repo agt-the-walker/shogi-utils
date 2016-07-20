@@ -86,12 +86,12 @@ Uses the following pieces from shogi: 王 (as 鵬)
 
 | Piece | Abbr | Betza    | Promote | Notes |
 | ----- | ---- | -------- | ------- | ----- |
-| 猪    | Fa   | FfrlW    | 鵰      | 1     |
-| 鶴    | Cr   | FfbW     |         |       |
-| 雉    | Pt   | fDbF     |         |       |
-| 左    | LQ   | fRbrBblF |         | 2     |
-| 右    | RQ   | fRblBbrF |         | 2     |
-| 燕    | Sw   | fW       | 鴈      | 3, 4  |
+| 猪    | F    | FfrlW    | 鵰      | 1     |
+| 鶴    | C    | FfbW     |         |       |
+| 雉    | P    | fDbF     |         |       |
+| 左    | L    | fRbrBblF |         | 2     |
+| 右    | R    | fRblBbrF |         | 2     |
+| 燕    | S    | fW       | 鴈      | 3, 4  |
 
 1. Wikipedia uses 鷹 instead but this piece is different in Wa shogi
 2. Wikipedia uses 鶉 for both but this is confusing
@@ -119,7 +119,7 @@ Uses the following pieces from shogi: 王, 飛, 角, 金, 銀, 歩
 | ----- | ---- | -------- | ------- | ----- |
 | 妃    | Q    | Q        |         |       |
 | 跳    | N    | N        | 今      |       |
-| 反    | L    | fbR      | 仝      | 1     |
+| 反    | A    | fbR      | 仝      | 1     |
 
 1. This piece promotes differently in Chu shogi. Unfortunately I couldn't use
 香 or 車 (different pieces in regular and Wa shogi).
