@@ -9,16 +9,16 @@ much from regular shogi, for the reasons described in [this page](README.md).
 
 ## Initial pieces
 
-| Piece | Name   | Betza | Promote | Notes |
-| ----- | ------ | ----- | ------- | ----- |
-| 王(玉)| King   | K     |         | 1     |
-| 飛    | Rook   | R     | 龍(竜)  |       |
-| 角    | Bishop | B     | 馬      |       |
-| 金    | Gold   | WfF   |         |       |
-| 銀    | Silver | FfW   | 全      |       |
-| 桂    | Knight | ffN   | 圭      |       |
-| 香    | Lance  | fR    | 杏      |       |
-| 歩    | Pawn   | fW    | と(个)  | 2, 3  |
+| Piece | Name   | Abbr | Betza | Promote | Notes |
+| ----- | ------ | ---- | ----- | ------- | ----- |
+| 王(玉)| King   | K    | K     |         | 1     |
+| 飛    | Rook   | R    | R     | 龍(竜)  |       |
+| 角    | Bishop | B    | B     | 馬      |       |
+| 金    | Gold   | G    | WfF   |         |       |
+| 銀    | Silver | S    | FfW   | 全      |       |
+| 桂    | Knight | N    | ffN   | 圭      |       |
+| 香    | Lance  | L    | fR    | 杏      |       |
+| 歩    | Pawn   | P    | fW    | と(个)  | 2, 3  |
 
 1. Royal piece
 2. Only one per column
@@ -45,23 +45,23 @@ Uses the following pieces from shogi: 王 (as 靏), 歩
 
 ## Extra initial pieces
 
-| Piece | Betza    | Promote | Notes |
-| ----- | -------- | ------- | ----- |
-| 鷲    | fbRfB3K  |         |       |
-| 狐    | fbWFfbDA |         |       |
-| 鷹    | fWB      | 鶏      |       |
-| 兎    | fRFbW    | 狐      |       |
-| 狼    | WfF      | 熊      |       |
-| 鹿    | FfW      | 猪      |       |
-| 犬    | fFrlbW   | 狼      |       |
-| 猿    | fFfbW    | 鹿      |       |
-| 鳫    | fFfbW    | 燕      |       |
-| 鶏    | fFrlW    | 延      |       |
-| 燕    | WrlR     | 行      |       |
-| 烏    | fWbF     | 鷹      |       |
-| 鴟    | fWbF     | 鷲      |       |
-| 風    | fRbR2    | 天      |       |
-| 車    | fR       | 牛      |       |
+| Piece | Abbr | Betza    | Promote | Notes |
+| ----- | ---- | -------- | ------- | ----- |
+| 鷲    | CE   | fbRfB3K  |         |       |
+| 狐    | TF   | fbWFfbDA |         |       |
+| 鷹    | FF   | fWB      | 鶏      |       |
+| 兎    | RR   | fRFbW    | 狐      |       |
+| 狼    | VW   | WfF      | 熊      |       |
+| 鹿    | VS   | FfW      | 猪      |       |
+| 犬    | BD   | fFrlbW   | 狼      |       |
+| 猿    | CM   | fFfbW    | 鹿      |       |
+| 鳫    | FG   | fFfbW    | 燕      |       |
+| 鶏    | FC   | fFrlW    | 延      |       |
+| 燕    | SW   | WrlR     | 行      |       |
+| 烏    | SC   | fWbF     | 鷹      |       |
+| 鴟    | SO   | fWbF     | 鷲      |       |
+| 風    | LH   | fRbR2    | 天      |       |
+| 車    | OC   | fR       | 牛      |       |
 
 ## Promoted pieces
 
@@ -84,14 +84,14 @@ Uses the following pieces from shogi: 王 (as 鵬)
 
 ## Extra initial pieces
 
-| Piece | Betza    | Promote | Notes |
-| ----- | -------- | ------- | ----- |
-| 猪    | FfrlW    | 鵰      | 1     |
-| 鶴    | FfbW     |         |       |
-| 雉    | fDbF     |         |       |
-| 左    | fRbrBblF |         | 2     |
-| 右    | fRblBbrF |         | 2     |
-| 燕    | fW       | 鴈      | 3, 4  |
+| Piece | Abbr | Betza    | Promote | Notes |
+| ----- | ---- | -------- | ------- | ----- |
+| 猪    | Fa   | FfrlW    | 鵰      | 1     |
+| 鶴    | Cr   | FfbW     |         |       |
+| 雉    | Pt   | fDbF     |         |       |
+| 左    | LQ   | fRbrBblF |         | 2     |
+| 右    | RQ   | fRblBbrF |         | 2     |
+| 燕    | Sw   | fW       | 鴈      | 3, 4  |
 
 1. Wikipedia uses 鷹 instead but this piece is different in Wa shogi
 2. Wikipedia uses 鶉 for both but this is confusing
@@ -115,11 +115,11 @@ Uses the following pieces from shogi: 王, 飛, 角, 金, 銀, 歩
 
 ## Extra initial pieces
 
-| Piece | Betza    | Promote | Notes |
-| ----- | -------- | ------- | ----- |
-| 妃    | Q        |         |       |
-| 跳    | N        | 今      |       |
-| 反    | fbR      | 仝      | 1     |
+| Piece | Abbr | Betza    | Promote | Notes |
+| ----- | ---- | -------- | ------- | ----- |
+| 妃    | Q    | Q        |         |       |
+| 跳    | N    | N        | 今      |       |
+| 反    | L    | fbR      | 仝      | 1     |
 
 1. This piece promotes differently in Chu shogi. Unfortunately I couldn't use
 香 or 車 (different pieces in regular and Wa shogi).
