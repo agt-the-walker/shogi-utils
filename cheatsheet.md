@@ -55,13 +55,15 @@ Uses the following pieces from shogi: 王 (as 靏), 歩
 | 鹿    | VS   | FfW      | 猪      |       |
 | 犬    | BD   | fFrlbW   | 狼      |       |
 | 猿    | CM   | fFfbW    | 鹿      |       |
-| 鳫    | FG   | fFfbW    | 燕      |       |
+| 鳫    | FG   | fFfbW    | 羽      |       |
 | 鶏    | FC   | fFrlW    | 延      |       |
-| 燕    | SW   | WrlR     | 行      |       |
+| 羽    | SW   | WrlR     | 行      | 1     |
 | 烏    | SC   | fWbF     | 鷹      |       |
 | 鴟    | SO   | fWbF     | 鷲      |       |
 | 風    | LH   | fRbR2    | 天      |       |
 | 車    | OC   | fR       | 牛      |       |
+
+1. Wikipedia uses 燕 instead but this piece is different in Tori shogi
 
 ## Promoted pieces
 
@@ -86,14 +88,15 @@ Uses the following pieces from shogi: 王 (as 鵬)
 
 | Piece | Abbr | Betza    | Promote | Notes |
 | ----- | ---- | -------- | ------- | ----- |
-| 猪    | F    | FfrlW    | 鵰      | 1     |
+| 象    | F    | FfrlW    | 鵰      | 1     |
 | 鶴    | C    | FfbW     |         |       |
 | 雉    | P    | fDbF     |         |       |
 | 左    | L    | fRbrBblF |         | 2     |
 | 右    | R    | fRblBbrF |         | 2     |
 | 燕    | S    | fW       | 鴈      | 3, 4  |
 
-1. Wikipedia uses 鷹 instead but this piece is different in Wa shogi
+1. This piece promotes differently in Chu shogi. Unfortunately I couldn't use
+鷹 (different piece in Wa shogi)
 2. Wikipedia uses 鶉 for both but this is confusing
 3. Only two per column
 4. Cannot be dropped to give mate
