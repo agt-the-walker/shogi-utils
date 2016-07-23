@@ -135,7 +135,12 @@ Uses the following pieces from shogi: 王, 飛, 角, 金, 銀, 歩
 | 仝    | WfF   |
 
 
-# SFEN notation
+# Implementation details
+
+The following section only applies whenever we mix standard and non-standard
+pieces, as suggested in [this page](README.md).
+
+## SFEN notation
 
 [Forsyth-Edwards notation for shogi](http://shogi.typepad.jp/brainstorm/2007/01/post_11a0.html)
 can be used. Non-standard pieces will be enclosed by angle bracket characters.
@@ -144,3 +149,32 @@ For instance:
 * \<bd>: gote's 犬 (BD) from Wa shogi
 * \<R>: sente's 右 (R) from Tori shogi
 * \<n>: gote's 跳 (N) from Okisaki shogi
+
+## PGN notation
+
+[Western notation](https://en.wikipedia.org/wiki/Shogi#Notation) can be used,
+with non-standard pieces enclosed by angle bracket characters. For instance,
+given the following starting position (BOD format):
+
+    後手の持駒：
+      ９ ８ ７ ６ ５ ４ ３ ２ １
+    +---------------------------+
+    |v香v桂v銀v金v桂v金v跳v王v香|一
+    | ・v飛 ・ ・ ・ ・ ・v角 ・|二
+    |v歩v歩v歩v歩v歩v歩v歩v歩v歩|三
+    | ・ ・ ・ ・ ・ ・ ・ ・ ・|四
+    | ・ ・ ・ ・ ・ ・ ・ ・ ・|五
+    | ・ ・ ・ ・ ・ ・ ・ ・ ・|六
+    | 歩 歩 歩 歩 歩 歩 歩 歩 歩|七
+    | ・ 角 ・ ・ ・ ・ ・ 飛 ・|八
+    | 香 玉 跳 金 桂 金 銀 桂 香|九
+    +---------------------------+
+    先手の持駒：
+
+The game could proceed like this:
+
+    [Variant "kashogi"]
+    [FEN "lnsgng<n>kl/1r5b1/ppppppppp/9/9/9/PPPPPPPPP/1B5R1/LK<N>GNGSNL b - 1"]
+    [...]
+
+    1. P-7f P-3d 2. P-6f \<N>-5b [...]
