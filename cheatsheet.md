@@ -45,36 +45,36 @@ Uses the following pieces from shogi: 王 (as 靏), 歩
 
 ## Extra initial pieces
 
-| Piece | Abbr | Betza    | Promote | Notes |
-| ----- | ---- | -------- | ------- | ----- |
-| 鷲    | CE   | fbRfB3K  |         |       |
-| 狐    | TF   | fbWFfbDA |         |       |
-| 鷹    | FF   | fWB      | 鶏      |       |
-| 兎    | RR   | fRFbW    | 狐      |       |
-| 狼    | VW   | WfF      | 熊      |       |
-| 鹿    | VS   | FfW      | 猪      |       |
-| 犬    | BD   | fFrlbW   | 狼      |       |
-| 猿    | CM   | fFfbW    | 鹿      |       |
-| 鳫    | FG   | fFfbW    | 羽      |       |
-| 鶏    | FC   | fFrlW    | 延      |       |
-| 羽    | SW   | WrlR     | 行      | 1     |
-| 烏    | SC   | fWbF     | 鷹      |       |
-| 鴟    | SO   | fWbF     | 鷲      |       |
-| 風    | LH   | fRbR2    | 天      |       |
-| 車    | OC   | fR       | 牛      |       |
+| Piece | Name             | Abbr | Betza    | Promote | Notes |
+| ----- | ---------------- | ---- | -------- | ------- | ----- |
+| 鷲    | Cloud Eagle      | CE   | fbRfB3K  |         |       |
+| 狐    | Treacherous Fox  | TF   | fbWFfbDA |         |       |
+| 鷹    | Flying Falcon    | FF   | fWB      | 鶏      |       |
+| 兎    | Running Rabbit   | RR   | fRFbW    | 狐      |       |
+| 狼    | Violent Wolf     | VW   | WfF      | 熊      |       |
+| 鹿    | Violent Stag     | VS   | FfW      | 猪      |       |
+| 犬    | Blind Dog        | BD   | fFrlbW   | 狼      |       |
+| 猿    | Climbing Monkey  | CM   | fFfbW    | 鹿      |       |
+| 鳫    | Flying Goose     | FG   | fFfbW    | 羽      |       |
+| 鶏    | Flying Cock      | FC   | fFrlW    | 延      |       |
+| 羽    | Swallow's Wings  | SW   | WrlR     | 行      | 1     |
+| 烏    | Strutting Crow   | SC   | fWbF     | 鷹      |       |
+| 鴟    | Swooping Owl     | SO   | fWbF     | 鷲      |       |
+| 風    | Liberated Horse  | LH   | fRbR2    | 天      |       |
+| 車    | Oxcart           | OC   | fR       | 牛      |       |
 
 1. Wikipedia uses 燕 instead but this piece is different in Tori shogi
 
 ## Promoted pieces
 
-| Piece | Betza  |
-| ----- | ------ |
-| 熊    | K      | 
-| 猪    | FfrlW  |
-| 延    | fbRWfF |
-| 行    | R      |
-| 天    | fbN    |
-| 牛    | K      |
+| Piece | Name            | Betza  |
+| ----- | --------------- | ------ |
+| 熊    | Bear's Eyes     | K      | 
+| 猪    | Roaming Boar    | FfrlW  |
+| 延    | Raiding Falcon  | fbRWfF |
+| 行    | Gliding Swallow | R      |
+| 天    | Heavenly Horse  | fbN    |
+| 牛    | Plodding Ox     | K      |
 
 
 # Tori shogi
@@ -86,14 +86,14 @@ Uses the following pieces from shogi: 王 (as 鵬)
 
 ## Extra initial pieces
 
-| Piece | Abbr | Betza    | Promote | Notes |
-| ----- | ---- | -------- | ------- | ----- |
-| 象    | F    | FfrlW    | 鵰      | 1     |
-| 鶴    | C    | FfbW     |         |       |
-| 雉    | P    | fDbF     |         |       |
-| 左    | L    | fRbrBblF |         | 2     |
-| 右    | R    | fRblBbrF |         | 2     |
-| 燕    | S    | fW       | 鴈      | 3, 4  |
+| Piece | Name        | Abbr | Betza    | Promote | Notes |
+| ----- | ----------- | ---- | -------- | ------- | ----- |
+| 象    | Falcon      | F    | FfrlW    | 鵰      | 1     |
+| 鶴    | Crane       | C    | FfbW     |         |       |
+| 雉    | Pheasant    | P    | fDbF     |         |       |
+| 左    | Left Quail  | L    | fRbrBblF |         | 2     |
+| 右    | Right Quail | R    | fRblBbrF |         | 2     |
+| 燕    | Swallow     | S    | fW       | 鴈      | 3, 4  |
 
 1. This piece promotes differently in Chu shogi. Unfortunately I couldn't use
 鷹 (different piece in Wa shogi)
@@ -103,10 +103,10 @@ Uses the following pieces from shogi: 王 (as 鵬)
 
 ## Promoted pieces
 
-| Piece | Betza    |
-| ----- | -------- |
-| 鵰    | fBbRWbB2 |
-| 鴈    | fAbD     |
+| Piece | Name  | Betza    |
+| ----- | ----- | -------- |
+| 鵰    | Eagle | fBbRWbB2 |
+| 鴈    | Goose | fAbD     |
 
 
 # Okisaki shogi
@@ -118,11 +118,11 @@ Uses the following pieces from shogi: 王, 飛, 角, 金, 銀, 歩
 
 ## Extra initial pieces
 
-| Piece | Abbr | Betza    | Promote | Notes |
-| ----- | ---- | -------- | ------- | ----- |
-| 妃    | Q    | Q        |         |       |
-| 跳    | N    | N        | 今      |       |
-| 反    | A    | fbR      | 仝      | 1     |
+| Piece | Name            | Abbr | Betza    | Promote | Notes |
+| ----- | --------------- | ---- | -------- | ------- | ----- |
+| 妃    | Queen           | Q    | Q        |         |       |
+| 跳    | FIDE Knight     | N    | N        | 今      |       |
+| 反    | Reverse Chariot | A    | fbR      | 仝      | 1     |
 
 1. This piece promotes differently in Chu shogi. Unfortunately I couldn't use
 香 or 車 (different pieces in standard and Wa shogi).
