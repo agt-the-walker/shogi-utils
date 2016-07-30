@@ -143,14 +143,14 @@ pieces, as suggested in [this page](README.md).
 ## SFEN notation
 
 [Forsyth-Edwards notation for shogi](http://shogi.typepad.jp/brainstorm/2007/01/post_11a0.html)
-can be used. Non-standard pieces will be enclosed by angle bracket characters.
-For instance:
-* \<RR>: sente's 兎 (RR) from Wa shogi
-* +\<RR>: sente's promoted 兎 (RR+) from Wa shogi
-* \<bd>: gote's 犬 (BD) from Wa shogi
-* \<R>: sente's 右 (R) from Tori shogi
-* \<n>: gote's 跳 (N) from Okisaki shogi
-* +\<n>: gote's promoted 跳 (N+) from Okisaki shogi
+can be used. Tori and Okisaki pieces will be followed by a single-quote
+character while Wa pieces (2 characters) will be followed by @. For instance:
+* RR@: sente's 兎 (RR) from Wa shogi
+* +RR@: sente's promoted 兎 (RR+) from Wa shogi
+* bd@: gote's 犬 (BD) from Wa shogi
+* R': sente's 右 (R) from Tori shogi
+* n': gote's 跳 (N) from Okisaki shogi
+* +n': gote's promoted 跳 (N+) from Okisaki shogi
 
 ## PGN notation (and BOD diagrams)
 
@@ -177,7 +177,7 @@ starting position (BOD format):
 The game could proceed like this:
 
     [Variant "kashogi"]
-    [FEN "lnsgng<n>kl/1r5b1/ppppppppp/9/9/9/PPPPPPPPP/1B5R1/LK<N>GNGSNL b - 1"]
+    [FEN "lnsgngn'kl/1r5b1/ppppppppp/9/9/9/PPPPPPPPP/1B5R1/LKN'GNGSNL b - 1"]
     [...]
 
     1. P-7f P-3d 2. P-6f N'-5b [...]
