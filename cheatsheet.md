@@ -163,13 +163,13 @@ starting position (BOD format):
     ９ ８ ７ ６ ５ ４ ３ ２ １
     +---------------------------+
     |v香v桂v銀v金v桂v金v跳v王v香|一
-    | ・v飛 ・ ・ ・ ・ ・v角 ・|二
+    | ・v飛 ・ ・v烏 ・ ・v角 ・|二
     |v歩v歩v歩v歩v歩v歩v歩v歩v歩|三
     | ・ ・ ・ ・ ・ ・ ・ ・ ・|四
     | ・ ・ ・ ・ ・ ・ ・ ・ ・|五
     | ・ ・ ・ ・ ・ ・ ・ ・ ・|六
     | 歩 歩 歩 歩 歩 歩 歩 歩 歩|七
-    | ・ 角 ・ ・ ・ ・ ・ 飛 ・|八
+    | ・ 角 ・ ・ 烏 ・ ・ 飛 ・|八
     | 香 玉 跳 金 桂 金 銀 桂 香|九
     +---------------------------+
     先手の持駒：
@@ -177,7 +177,7 @@ starting position (BOD format):
 The game could proceed like this:
 
     [Variant "kashogi"]
-    [FEN "lnsgngn'kl/1r5b1/ppppppppp/9/9/9/PPPPPPPPP/1B5R1/LKN'GNGSNL b - 1"]
+    [FEN "lnsgngn'kl/1r2SC@2b1/ppppppppp/9/9/9/PPPPPPPPP/1B2SC@2R1/LKN'GNGSNL b - 1"]
     [...]
 
     1. P-7f P-3d 2. P-6f N'-5b [...]
