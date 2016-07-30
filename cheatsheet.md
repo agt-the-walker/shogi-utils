@@ -160,7 +160,7 @@ distinguish them from standard pieces. For instance, given the following
 starting position (BOD format):
 
     後手の持駒：
-    ９ ８ ７ ６ ５ ４ ３ ２ １
+      ９ ８ ７ ６ ５ ４ ３ ２ １
     +---------------------------+
     |v香v桂v銀v金v桂v金v跳v王v香|一
     | ・v飛 ・ ・v烏 ・ ・v角 ・|二
