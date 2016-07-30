@@ -146,11 +146,13 @@ pieces, as suggested in [this page](README.md).
 can be used. Non-standard pieces will be enclosed by angle bracket characters.
 For instance:
 * \<RR>: sente's 兎 (RR) from Wa shogi
+* +\<RR>: sente's promoted 兎 (RR+) from Wa shogi
 * \<bd>: gote's 犬 (BD) from Wa shogi
 * \<R>: sente's 右 (R) from Tori shogi
 * \<n>: gote's 跳 (N) from Okisaki shogi
+* +\<n>: gote's promoted 跳 (N+) from Okisaki shogi
 
-## PGN notation
+## PGN notation (and BOD diagrams)
 
 [Western notation](https://en.wikipedia.org/wiki/Shogi#Notation) can be used,
 with Tori and Okisaki pieces followed by a single-quote character, to
@@ -190,3 +192,16 @@ the following notation (␣ being the symbol for a space):
 * `V鷲`: gote's promoted 鴟 (+SO) -- this is new
 * `␣鴟`: sente's 鴟 (SO)
 * `v鴟`: gote's 鴟 (SO)
+
+## ASCII diagrams
+
+http://github.com/gunyarakun/python-shogi shows an example for standard Shogi
+("Show a simple ASCII board"). Since we only have enough space for three
+characters per piece (including + for promotions), I propose the following
+notation for non-standard pieces:
+* `␣RR`: sente's 兎 (RR) from Wa shogi
+* `+RR`: sente's promoted 兎 (+RR) from Wa shogi
+* `␣bd`: gote's 犬 (BD) from Wa shogi
+* `␣R'`: sente's 右 (R) from Tori shogi
+* `␣n'`: gote's 跳 (N) from Okisaki shogi
+* `+n'`: gote's promoted 跳 (+N) from Okisaki shogi
