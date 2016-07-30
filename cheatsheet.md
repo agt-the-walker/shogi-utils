@@ -180,13 +180,13 @@ The game could proceed like this:
 
     1. P-7f P-3d 2. P-6f N'-5b [...]
 
-For some Wa Shogi pieces, it is necessary to distinguish between the promoted
+For some Wa shogi pieces, it is necessary to distinguish between the promoted
 and the non-promoted version of the piece in BOD diagrams. For instance 鷲 can
 be either the unpromoted 鷲 (CE) or the promoted 鴟 (+SO). Therefore I propose
-the following notation:
-* ` 鷲`: sente's 鷲 (CE)
+the following notation (␣ being the symbol for a space):
+* `␣鷲`: sente's 鷲 (CE)
 * `v鷲`: gote's 鷲 (CE)
 * `^鷲`: sente's promoted 鴟 (+SO) -- this is new
 * `V鷲`: gote's promoted 鴟 (+SO) -- this is new
-* ` 鴟`: sente's 鴟 (SO)
+* `␣鴟`: sente's 鴟 (SO)
 * `v鴟`: gote's 鴟 (SO)
