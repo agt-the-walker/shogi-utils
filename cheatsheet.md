@@ -153,8 +153,9 @@ For instance:
 ## PGN notation
 
 [Western notation](https://en.wikipedia.org/wiki/Shogi#Notation) can be used,
-with non-standard pieces enclosed by angle bracket characters. For instance,
-given the following starting position (BOD format):
+with Tori and Okisaki pieces followed by a single-quote character, to
+distinguish them from standard pieces. For instance, given the following
+starting position (BOD format):
 
     後手の持駒：
     ９ ８ ７ ６ ５ ４ ３ ２ １
@@ -177,4 +178,15 @@ The game could proceed like this:
     [FEN "lnsgng<n>kl/1r5b1/ppppppppp/9/9/9/PPPPPPPPP/1B5R1/LK<N>GNGSNL b - 1"]
     [...]
 
-    1. P-7f P-3d 2. P-6f <N>-5b [...]
+    1. P-7f P-3d 2. P-6f N'-5b [...]
+
+For some Wa Shogi pieces, it is necessary to distinguish between the promoted
+and the non-promoted version of the piece in BOD diagrams. For instance 鷲 can
+be either the unpromoted 鷲 (CE) or the promoted 鴟 (+SO). Therefore I propose
+the following notation:
+* ` 鷲`: sente's 鷲 (CE)
+* `v鷲`: gote's 鷲 (CE)
+* `^鷲`: sente's promoted 鴟 (+SO) -- this is new
+* `V鷲`: gote's promoted 鴟 (+SO) -- this is new
+* ` 鴟`: sente's 鴟 (SO)
+* `v鴟`: gote's 鴟 (SO)
