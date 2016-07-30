@@ -180,7 +180,7 @@ The game could proceed like this:
     [FEN "lnsgngn'kl/1r2SC@2b1/ppppppppp/9/9/9/PPPPPPPPP/1B2SC@2R1/LKN'GNGSNL b - 1"]
     [...]
 
-    1. P-7f P-3d 2. P-6f N'-5b [...]
+    1. P-7f P-5d 2. P-6f SC-5c 3. P-2f N'-5b [...]
 
 For some Wa shogi pieces, it is necessary to distinguish between the promoted
 and the non-promoted version of the piece in BOD diagrams. For instance 鷲 can
