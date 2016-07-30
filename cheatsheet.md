@@ -205,3 +205,15 @@ notation for non-standard pieces:
 * `␣R'`: sente's 右 (R) from Tori shogi
 * `␣n'`: gote's 跳 (N) from Okisaki shogi
 * `+n'`: gote's promoted 跳 (+N) from Okisaki shogi
+
+For instance:
+
+     l  n  s  g  n  g  n' k  l
+     .  r  .  .  sc .  .  b  .
+     p  p  p  p  p  p  p  p  p
+     .  .  .  .  .  .  .  .  .
+     .  .  .  .  .  .  .  .  .
+     .  .  .  .  .  .  .  .  .
+     P  P  P  P  P  P  P  P  P
+     .  B  .  .  SC .  .  R  .
+     L  K  N' G  N  G  S  N  L
