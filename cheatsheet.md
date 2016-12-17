@@ -146,11 +146,11 @@ pieces, as suggested in [this page](README.md).
 can be used. Tori and Okisaki pieces will be followed by a single-quote
 character while Wa pieces (2 characters) will be followed by @. For instance:
 * `RR@`: sente's 兎 (RR) from Wa shogi
-* `+RR@`: sente's promoted 兎 (RR+) from Wa shogi
+* `+RR@`: sente's promoted 兎 (+RR) from Wa shogi
 * `bd@`: gote's 犬 (BD) from Wa shogi
 * `R'`: sente's 右 (R) from Tori shogi
 * `n'`: gote's 跳 (N) from Okisaki shogi
-* `+n'`: gote's promoted 跳 (N+) from Okisaki shogi
+* `+n'`: gote's promoted 跳 (+N) from Okisaki shogi
 
 ## PGN notation (and BOD diagrams)
 
