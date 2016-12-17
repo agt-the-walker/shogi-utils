@@ -73,7 +73,7 @@ Uses the following pieces from shogi: 王 (as 靏), 歩
 | 猪    | Roaming Boar    | FfrlW  |
 | 延    | Raiding Falcon  | fbRWfF |
 | 行    | Gliding Swallow | R      |
-| 天    | Heavenly Horse  | fbN    |
+| 天    | Heavenly Horse  | ffbbN  |
 | 牛    | Plodding Ox     | K      |
 
 
