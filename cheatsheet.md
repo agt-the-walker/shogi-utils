@@ -49,7 +49,7 @@ Uses the following pieces from shogi: 王 (as 靏), 歩
 | ----- | ---------------- | ---- | -------- | ------- | ----- |
 | 鷲    | Cloud Eagle      | CE   | fbRfB3K  |         |       |
 | 狐    | Treacherous Fox  | TF   | fbWFfbDA |         |       |
-| 鷹    | Flying Falcon    | FF   | fWB      | 鶏      |       |
+| 鷹    | Flying Falcon    | FF   | fWB      | 執      |       |
 | 兎    | Running Rabbit   | RR   | fRFbW    | 狐      |       |
 | 狼    | Violent Wolf     | VW   | WfF      | 熊      |       |
 | 鹿    | Violent Stag     | VS   | FfW      | 猪      |       |
@@ -67,14 +67,15 @@ Uses the following pieces from shogi: 王 (as 靏), 歩
 
 ## Promoted pieces
 
-| Piece | Name            | Betza  |
-| ----- | --------------- | ------ |
-| 熊    | Bear's Eyes     | K      | 
-| 猪    | Roaming Boar    | FfrlW  |
-| 延    | Raiding Falcon  | fbRWfF |
-| 行    | Gliding Swallow | R      |
-| 天    | Heavenly Horse  | ffbbN  |
-| 牛    | Plodding Ox     | K      |
+| Piece | Name             | Betza  |
+| ----- | ---------------- | ------ |
+| 執    | Tenacious Falcon | fbRBW  |
+| 熊    | Bear's Eyes      | K      |
+| 猪    | Roaming Boar     | FfrlW  |
+| 延    | Raiding Falcon   | fbRWfF |
+| 行    | Gliding Swallow  | R      |
+| 天    | Heavenly Horse   | ffbbN  |
+| 牛    | Plodding Ox      | K      |
 
 
 # Tori shogi
