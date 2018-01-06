@@ -25,6 +25,7 @@ bool second_row_protected(const std::string& first_row,
                 second_row[i-1] = true;
             if (i+1 < size)
                 second_row[i+1] = true;
+            // fallthrough
         case 'L':
             second_row[i] = true;
         }
