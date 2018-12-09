@@ -1,25 +1,82 @@
 #!/usr/bin/env python3
 
-import netrc
+import os
+from pathlib import PosixPath
 import sys
+from urllib.parse import urlparse
 
 import mechanicalsoup
-from urllib.parse import urlparse
 
 PLAYER_URL = 'https://system.81dojo.com/en/players/show/'
 HOST = urlparse(PLAYER_URL).hostname
-KIFUS_URL = 'https://system.81dojo.com/api/v2/kifus'
+LOGIN_URL = 'https://system.81dojo.com/en/players/sign_in'
+SEARCH_URL = 'https://system.81dojo.com/en/kifus/search/form'
 
-netrc = netrc.netrc()
-info = netrc.authenticators(HOST)
-if info is None:
-    sys.exit('~/.netrc should include: machine #{HOST} login [...] '
-             'password [...]')
+LAST_STATS_FILE = PosixPath('~/.fetch-81dojo-games.last').expanduser()
 
-user, password = info[0], info[2]
+
+def get_user_password():
+    import netrc
+    netrc = netrc.netrc()
+    info = netrc.authenticators(HOST)
+    if info is None:
+        sys.exit('~/.netrc should include: machine #{HOST} login [...] '
+                 'password [...]')
+    return info[0], info[2]
+
+
+def get_stats(browser):
+    try:
+        previous_stats = LAST_STATS_FILE.read_text()
+    except FileNotFoundError:
+        previous_stats = None
+
+    browser.open(PLAYER_URL + user)
+    page = browser.get_current_page()
+    current_stats = page.find(text='Games').find_next('td').contents[0].strip()
+
+    if current_stats == previous_stats:
+        sys.exit('No game since last run')
+
+    return current_stats
+
+
+def log_in(browser):
+    browser.open(LOGIN_URL)
+    browser.select_form()
+    browser['player[name]'] = user
+    browser['player[password]'] = password
+    browser.submit_selected()
+
+
+def get_game_ids(browser, until=None):
+    browser.open(SEARCH_URL)
+    browser.select_form()
+    browser['conditions[search_from]'] = '1970-01-01'  # Unix Epoch
+    if until:
+        browser['conditions[search_until]'] = until
+    browser.submit_selected()
+
+    result = set()
+
+    page = browser.get_current_page()
+    for row in page.find('table', class_='list').find_all('tr'):
+        cells = row.find_all('td')
+        if cells:
+            oldest_date = next(cells[1].children)
+            game_id = int(os.path.basename(cells[-1].find('a')['href']))
+            result.add(game_id)
+
+    if page.find(text='Number of matching kifus reached your limit.'):
+        result.update(get_game_ids(browser, oldest_date))
+
+    return result
+
+
+user, password = get_user_password()
 
 browser = mechanicalsoup.StatefulBrowser()
-browser.open(PLAYER_URL + user)
-page = browser.get_current_page()
-game_stats = page.find(text='Games').find_next('td').contents[0]
-print(game_stats)
+stats = get_stats(browser)
+log_in(browser)
+game_ids = get_game_ids(browser)
+print(game_ids)
