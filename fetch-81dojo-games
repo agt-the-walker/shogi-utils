@@ -1,0 +1,31 @@
+#!/usr/bin/env python3
+
+import netrc
+import sys
+
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from urllib.parse import urlparse
+
+PLAYER_URL = 'https://system.81dojo.com/en/players/show/'
+HOST = urlparse(PLAYER_URL).hostname
+KIFUS_URL = 'https://system.81dojo.com/api/v2/kifus'
+
+netrc = netrc.netrc()
+info = netrc.authenticators(HOST)
+if info is None:
+    sys.exit('~/.netrc should include: machine #{HOST} login [...] '
+             'password [...]')
+
+user, password = info[0], info[2]
+
+chrome_options = Options()
+chrome_options.add_argument('--headless')
+
+browser = webdriver.Chrome(options=chrome_options)
+browser.get(PLAYER_URL + user)
+games_elem = browser.find_element_by_xpath(
+        '//td[text()="Games"]/following-sibling::td')
+print(games_elem.text)
+
+browser.quit()
