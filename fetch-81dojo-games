@@ -3,8 +3,7 @@
 import netrc
 import sys
 
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
+import mechanicalsoup
 from urllib.parse import urlparse
 
 PLAYER_URL = 'https://system.81dojo.com/en/players/show/'
@@ -19,13 +18,8 @@ if info is None:
 
 user, password = info[0], info[2]
 
-chrome_options = Options()
-chrome_options.add_argument('--headless')
-
-browser = webdriver.Chrome(options=chrome_options)
-browser.get(PLAYER_URL + user)
-games_elem = browser.find_element_by_xpath(
-        '//td[text()="Games"]/following-sibling::td')
-print(games_elem.text)
-
-browser.quit()
+browser = mechanicalsoup.StatefulBrowser()
+browser.open(PLAYER_URL + user)
+page = browser.get_current_page()
+game_stats = page.find(text='Games').find_next('td').contents[0]
+print(game_stats)
