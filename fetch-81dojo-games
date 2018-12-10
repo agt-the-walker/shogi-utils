@@ -6,11 +6,14 @@ import sys
 from urllib.parse import urlparse
 
 import mechanicalsoup
+import requests
 
-PLAYER_URL = 'https://system.81dojo.com/en/players/show/'
+PLAYER_URL = 'https://system.81dojo.com/en/players/show/{}'
 HOST = urlparse(PLAYER_URL).hostname
 LOGIN_URL = 'https://system.81dojo.com/en/players/sign_in'
 SEARCH_URL = 'https://system.81dojo.com/en/kifus/search/form'
+REFERER_URL = 'https://81dojo.com'
+KIFU_URL = 'https://system.81dojo.com/api/v2/kifus/{}.json'
 
 LAST_STATS_FILE = PosixPath('~/.fetch-81dojo-games.last').expanduser()
 
@@ -27,11 +30,11 @@ def get_user_password():
 
 def get_stats(browser):
     try:
-        previous_stats = LAST_STATS_FILE.read_text()
+        previous_stats = LAST_STATS_FILE.read_text().strip()
     except FileNotFoundError:
         previous_stats = None
 
-    browser.open(PLAYER_URL + user)
+    browser.open(PLAYER_URL.format(user))
     page = browser.get_current_page()
     current_stats = page.find(text='Games').find_next('td').contents[0].strip()
 
@@ -73,10 +76,25 @@ def get_game_ids(browser, until=None):
     return result
 
 
+def save_game_id(session, game_id):
+    kifu_url = KIFU_URL.format(game_id)
+    with open(os.path.basename(kifu_url), 'w') as f:
+        f.write(session.get(kifu_url).text + '\n')
+
+
+def save_stats(stats):
+    LAST_STATS_FILE.write_text(stats + '\n')
+
+
 user, password = get_user_password()
 
 browser = mechanicalsoup.StatefulBrowser()
 stats = get_stats(browser)
 log_in(browser)
 game_ids = get_game_ids(browser)
-print(game_ids)
+
+with requests.Session() as session:
+    session.headers.update({'Referer': REFERER_URL})
+    for game_id in sorted(game_ids):
+        save_game_id(session, game_id)
+save_stats(stats)
