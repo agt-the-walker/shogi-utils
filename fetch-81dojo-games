@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import configparser
 import os
 from pathlib import PosixPath
 import sys
@@ -8,14 +9,14 @@ from urllib.parse import urlparse
 import mechanicalsoup
 import requests
 
+CONFIG_FILE = PosixPath('~/.fetch-81dojo-games.cfg').expanduser()
+
 PLAYER_URL = 'https://system.81dojo.com/en/players/show/{}'
 HOST = urlparse(PLAYER_URL).hostname
 LOGIN_URL = 'https://system.81dojo.com/en/players/sign_in'
 SEARCH_URL = 'https://system.81dojo.com/en/kifus/search/form'
 REFERER_URL = 'https://81dojo.com'
 KIFU_URL = 'https://system.81dojo.com/api/v2/kifus/{}.json'
-
-LAST_STATS_FILE = PosixPath('~/.fetch-81dojo-games.last').expanduser()
 
 
 def get_user_password():
@@ -28,23 +29,29 @@ def get_user_password():
     return info[0], info[2]
 
 
-def get_stats(browser):
-    try:
-        previous_stats = LAST_STATS_FILE.read_text().strip()
-    except FileNotFoundError:
-        previous_stats = None
+def get_config(user):
+    config = configparser.RawConfigParser()
+    config.read(CONFIG_FILE)
 
+    if user not in config.sections():
+        config[user] = {}
+        config[user]['stats'] = ''
+        config[user]['latest_game_id'] = ''
+
+    return config
+
+
+def fetch_stats(browser, user, user_config):
     browser.open(PLAYER_URL.format(user))
     page = browser.get_current_page()
     current_stats = page.find(text='Games').find_next('td').contents[0].strip()
 
-    if current_stats == previous_stats:
+    if current_stats == user_config['stats']:
         sys.exit('No game since last run')
+    user_config['stats'] = current_stats
 
-    return current_stats
 
-
-def log_in(browser):
+def log_in(browser, user, password):
     browser.open(LOGIN_URL)
     browser.select_form()
     browser['player[name]'] = user
@@ -52,49 +59,70 @@ def log_in(browser):
     browser.submit_selected()
 
 
-def get_game_ids(browser, until=None):
-    browser.open(SEARCH_URL)
-    browser.select_form()
-    browser['conditions[search_from]'] = '1970-01-01'  # Unix Epoch
-    if until:
-        browser['conditions[search_until]'] = until
-    browser.submit_selected()
+def get_game_ids(browser, user_config):
+    oldest_date = None
+    game_ids = set()
 
-    result = set()
+    while True:
+        browser.open(SEARCH_URL)
+        browser.select_form()
+        browser['conditions[search_from]'] = '1970-01-01'  # Unix Epoch
+        if oldest_date:
+            print('Limit reached. Also searching games until ' + oldest_date)
+            browser['conditions[search_until]'] = oldest_date
+        else:
+            print('Searching all games')
+        browser.submit_selected()
 
-    page = browser.get_current_page()
-    for row in page.find('table', class_='list').find_all('tr'):
-        cells = row.find_all('td')
-        if cells:
-            oldest_date = next(cells[1].children)
-            game_id = int(os.path.basename(cells[-1].find('a')['href']))
-            result.add(game_id)
+        page = browser.get_current_page()
+        for row in page.find('table', class_='list').find_all('tr'):
+            cells = row.find_all('td')
+            if cells:
+                oldest_date = next(cells[1].children)
+                game_id = os.path.basename(cells[-1].find('a')['href'])
 
-    if page.find(text='Number of matching kifus reached your limit.'):
-        result.update(get_game_ids(browser, oldest_date))
+                if game_id == user_config['latest_game_id']:
+                    return game_ids
 
-    return result
+                game_ids.add(int(game_id))
 
+        if not page.find(text='Number of matching kifus reached your limit.'):
+            break
 
-def save_game_id(session, game_id):
-    kifu_url = KIFU_URL.format(game_id)
-    with open(os.path.basename(kifu_url), 'w') as f:
-        f.write(session.get(kifu_url).text + '\n')
+    return game_ids
 
 
-def save_stats(stats):
-    LAST_STATS_FILE.write_text(stats + '\n')
+def save_games(game_ids, user_config):
+    with requests.Session() as session:
+        session.headers.update({'Referer': REFERER_URL})
+        for game_id in sorted(game_ids):
+            print('Saving game {}'.format(game_id))
+
+            kifu_url = KIFU_URL.format(game_id)
+            with open(os.path.basename(kifu_url), 'w') as f:
+                f.write(session.get(kifu_url).text + '\n')
+
+    user_config['latest_game_id'] = str(max(game_ids))
 
 
-user, password = get_user_password()
+def save_config(config):
+    with open(CONFIG_FILE, 'w') as configfile:
+        config.write(configfile)
 
-browser = mechanicalsoup.StatefulBrowser()
-stats = get_stats(browser)
-log_in(browser)
-game_ids = get_game_ids(browser)
 
-with requests.Session() as session:
-    session.headers.update({'Referer': REFERER_URL})
-    for game_id in sorted(game_ids):
-        save_game_id(session, game_id)
-save_stats(stats)
+def main():
+    user, password = get_user_password()
+    config = get_config(user)
+
+    browser = mechanicalsoup.StatefulBrowser()
+    fetch_stats(browser, user, config[user])
+    log_in(browser, user, password)
+    game_ids = get_game_ids(browser, config[user])
+    browser.close()
+
+    save_games(game_ids, config[user])
+    save_config(config)
+
+
+if __name__ == '__main__':
+    main()
