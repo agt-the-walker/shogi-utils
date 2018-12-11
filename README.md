@@ -1,7 +1,136 @@
 [![Build Status](https://travis-ci.org/agt-the-walker/shogi-utils.svg?branch=master)](https://travis-ci.org/agt-the-walker/shogi-utils)
 
 
-# Preamble
+# Table of contents
+
+* [Utilities](#utilities)
+* [On Shogi variants](#on-shogi-variants)
+
+
+# Utilities
+
+
+## fetch-81dojo-games
+
+This program fetches all [81Dojo](https://81dojo.com/) games played by you.
+
+
+### Requirements
+
+* [Python](https://www.python.org/) 3.4+
+* [MechanicalSoup](https://pypi.org/project/MechanicalSoup/) Python package
+* [Requests](https://pypi.org/project/requests/) Python package
+
+
+### Usage
+
+    # replace "Agt" and "hidden" below with your 81Dojo credentials
+    $ echo 'machine system.81dojo.com login Agt password hidden' >>~/.netrc
+
+    $ cd ~/src/git/shogi-utils  # adapt accordingly
+
+    $ mkdir ~/81Dojo  # adapt accordingly
+
+    $ ./fetch-81dojo-games ~/81Dojo
+    Searching all games
+    Limit reached. Also searching games until 2018-04-22
+    Saving game 2692582
+    [...]
+    Saving game 3447638
+
+    $ ./fetch-81dojo-games ~/81Dojo
+    No game since last run
+
+    # after playing a few games
+    $ ./fetch-81dojo-games ~/81Dojo
+    Searching all games
+    Saving game 3450595
+    Saving game 3451125
+
+    $ ls ~/81Dojo
+    2692582.json
+    [...]
+    3451125.json
+
+
+### Notes
+
+Some information is stored in `~/.fetch-81dojo-games.cfg` to prevent
+unnecessary searches, especially considering they do cost
+[D-Miles](https://81dojo.com/documents/81Dojo_Mileage).
+
+
+## shuffle-first-row
+
+This program prints Shogi22680 positions with optional restrictions. K = King,
+N = Knight, etc.
+
+
+### Requirements
+
+* [Boost Program Options](http://www.boost.org/doc/libs/1_57_0/doc/html/program_options.html)
+* [GNU Compiler Collection (GCC)](http://www.gnu.org/software/gcc/), recent 
+  enough to support C++11
+* [GNU Make](http://www.gnu.org/software/make/)
+
+
+### Usage
+
+    $ cd ~/src/git/shogi-utils  # adapt accordingly
+
+    $ make
+
+    $ ./shuffle-first-row --help
+    [shows usage]
+
+    $ ./shuffle-first-row | wc -l
+    22680  # not surprisingly
+
+    # restriction: protect all squares on second row
+    $ ./shuffle-first-row --protect | wc -l
+    15750
+
+    # restriction: do the same without the help of the king
+    $ ./shuffle-first-row --protect-more | wc -l
+    8262
+
+    # additional restriction: don't put a lance behind pawns most likely
+    #  to be pushed during sente's first move
+    $ ./shuffle-first-row --protect-more | grep '^..[^L].[^L]..[^L].' | wc -l
+    3798
+
+    # the second position is the standard Shogi starting one
+    $ ./shuffle-first-row --protect | grep SGKGS
+    LLNSGKGSN
+    LNSGKGSNL
+    NSGKGSNLL
+
+    # shows a few Shogi22680 positions not listed with --protect
+    $ diff <(./shuffle-first-row) <(./shuffle-first-row --protect) | \
+      grep '^<' | cut -c3- | shuf -n 3
+    SGGLKLSNN  # last square of second row is unprotected
+    NLSLGKGSN  # first square of second row is unprotected
+    SLLNNGSGK  # fourth square of second row is unprotected
+
+    # shows a few Shogi22680 positions not listed with --protect-more
+    $ diff <(./shuffle-first-row --protect) \
+           <(./shuffle-first-row --protect-more) | \
+      grep '^<' | cut -c3- | shuf -n 3
+    KNSGLLSNG  # first square of second row is only protected by the king
+    LKLSSGNNG  # second square of second row is only protected by the king
+    NKLNSGSGL  # first two squares of second row are only protected by the king
+
+
+## Credits
+
+* http://www.shogi.net/shogi-l/Archive/2007/Nmar16-03.txt: introduced
+  Shogi22680
+* http://en.wikipedia.org/wiki/Capablanca_random_chess: one of the rules is
+  "All pawns must be protected in initial setup", which provided inspiration
+  for the `--protect` and `--protect-more` options.
+
+
+# On Shogi variants
 
 I like Shogi, but I also like other abstracts such as Arimaa and especially
 [Capablanca Random Chess](http://brainking.com/en/GameRules?tp=75), since I
@@ -57,123 +186,3 @@ pieces are in play compared to standard Shogi. There are several ways to do so:
 2. a drop cannot check
 3. a drop cannot attack enemy pieces (including the King, excluding pawns)
 4. a drop cannot attack enemy pieces (including the King) or pawns
-
-
-# fetch-81dojo-games
-
-This program fetches all [81Dojo](https://81dojo.com/) games played by you.
-
-
-## Requirements
-
-* [Python](https://www.python.org/) 3.4+
-* [MechanicalSoup](https://pypi.org/project/MechanicalSoup/) Python package
-* [Requests](https://pypi.org/project/requests/) Python package
-
-
-## Usage
-
-    # replace "Agt" and "hidden" below with your 81Dojo credentials
-    $ echo 'machine system.81dojo.com login Agt password hidden' >>~/.netrc
-
-    $ cd ~/src/git/shogi-utils  # adapt accordingly
-
-    $ mkdir ~/81Dojo  # adapt accordingly
-
-    $ ./fetch-81dojo-games ~/81Dojo
-    Searching all games
-    Limit reached. Also searching games until 2018-04-22
-    Saving game 2692582
-    [...]
-    Saving game 3447638
-
-    $ ./fetch-81dojo-games ~/81Dojo
-    No game since last run
-
-    # after playing a few games
-    $ ./fetch-81dojo-games ~/81Dojo
-    Searching all games
-    Saving game 3450595
-    Saving game 3451125
-
-    $ ls ~/81Dojo
-    2692582.json
-    [...]
-    3451125.json
-
-
-## Notes
-
-Some information is stored in `~/.fetch-81dojo-games.cfg` to prevent
-unnecessary searches, especially considering they do cost
-[D-Miles](https://81dojo.com/documents/81Dojo_Mileage).
-
-
-# shuffle-first-row
-
-This program prints Shogi22680 positions with optional restrictions. K = King,
-N = Knight, etc.
-
-
-## Requirements
-
-* [Boost Program Options](http://www.boost.org/doc/libs/1_57_0/doc/html/program_options.html)
-* [GNU Compiler Collection (GCC)](http://www.gnu.org/software/gcc/), recent 
-  enough to support C++11
-* [GNU Make](http://www.gnu.org/software/make/)
-
-
-## Usage
-
-    $ cd ~/src/git/shogi-utils  # adapt accordingly
-
-    $ make
-
-    $ ./shuffle-first-row --help
-    [shows usage]
-
-    $ ./shuffle-first-row | wc -l
-    22680  # not surprisingly
-
-    # restriction: protect all squares on second row
-    $ ./shuffle-first-row --protect | wc -l
-    15750
-
-    # restriction: do the same without the help of the king
-    $ ./shuffle-first-row --protect-more | wc -l
-    8262
-
-    # additional restriction: don't put a lance behind pawns most likely
-    #  to be pushed during sente's first move
-    $ ./shuffle-first-row --protect-more | grep '^..[^L].[^L]..[^L].' | wc -l
-    3798
-
-    # the second position is the standard Shogi starting one
-    $ ./shuffle-first-row --protect | grep SGKGS
-    LLNSGKGSN
-    LNSGKGSNL
-    NSGKGSNLL
-
-    # shows a few Shogi22680 positions not listed with --protect
-    $ diff <(./shuffle-first-row) <(./shuffle-first-row --protect) | \
-      grep '^<' | cut -c3- | shuf -n 3
-    SGGLKLSNN  # last square of second row is unprotected
-    NLSLGKGSN  # first square of second row is unprotected
-    SLLNNGSGK  # fourth square of second row is unprotected
-
-    # shows a few Shogi22680 positions not listed with --protect-more
-    $ diff <(./shuffle-first-row --protect) \
-           <(./shuffle-first-row --protect-more) | \
-      grep '^<' | cut -c3- | shuf -n 3
-    KNSGLLSNG  # first square of second row is only protected by the king
-    LKLSSGNNG  # second square of second row is only protected by the king
-    NKLNSGSGL  # first two squares of second row are only protected by the king
-
-
-## Credits
-
-* http://www.shogi.net/shogi-l/Archive/2007/Nmar16-03.txt: introduced
-  Shogi22680
-* http://en.wikipedia.org/wiki/Capablanca_random_chess: one of the rules is
-  "All pawns must be protected in initial setup", which provided inspiration
-  for the `--protect` and `--protect-more` options.
