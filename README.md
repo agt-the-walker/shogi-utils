@@ -59,11 +59,57 @@ pieces are in play compared to standard Shogi. There are several ways to do so:
 4. a drop cannot attack enemy pieces (including the King) or pawns
 
 
-# Utilities
+# fetch-81dojo-games
 
-## Purpose
+This program fetches all [81Dojo](https://81dojo.com/) games played by you.
 
-### shuffle-first-row
+
+## Requirements
+
+* [Python](https://www.python.org/) 3.4+
+* [MechanicalSoup](https://pypi.org/project/MechanicalSoup/) Python package
+* [Requests](https://pypi.org/project/requests/) Python package
+
+
+## Usage
+
+    # replace "Agt" and "hidden" below with your 81Dojo credentials
+    $ echo 'machine system.81dojo.com login Agt password hidden' >>~/.netrc
+
+    $ cd ~/src/git/shogi-utils  # adapt accordingly
+
+    $ mkdir ~/81Dojo  # adapt accordingly
+
+    $ ./fetch-81dojo-games ~/81Dojo
+    Searching all games
+    Limit reached. Also searching games until 2018-04-22
+    Saving game 2692582
+    [...]
+    Saving game 3447638
+
+    $ ./fetch-81dojo-games ~/81Dojo
+    No game since last run
+
+    # after playing a few games
+    $ ./fetch-81dojo-games ~/81Dojo
+    Searching all games
+    Saving game 3450595
+    Saving game 3451125
+
+    $ ls ~/81Dojo
+    2692582.json
+    [...]
+    3451125.json
+
+
+## Notes
+
+Some information is stored in `~/.fetch-81dojo-games.cfg` to prevent
+unnecessary searches, especially considering they do cost
+[D-Miles](https://81dojo.com/documents/81Dojo_Mileage).
+
+
+# shuffle-first-row
 
 This program prints Shogi22680 positions with optional restrictions. K = King,
 N = Knight, etc.
