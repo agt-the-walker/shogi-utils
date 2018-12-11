@@ -132,6 +132,9 @@ N = Knight, etc.
 
 # On Shogi variants
 
+
+## Article
+
 I like Shogi, but I also like other abstracts such as Arimaa and especially
 [Capablanca Random Chess](http://brainking.com/en/GameRules?tp=75), since I
 hate studying openings. For this reason, I'd like to try Shogi22680, but I'm
@@ -186,3 +189,11 @@ pieces are in play compared to standard Shogi. There are several ways to do so:
 2. a drop cannot check
 3. a drop cannot attack enemy pieces (including the King, excluding pawns)
 4. a drop cannot attack enemy pieces (including the King) or pawns
+
+
+## Play by forum
+
+I'd like to try:
+* https://boardgamegeek.com/thread/1949202/shogi-random-starting-position-and-pie-rule
+* https://boardgamegeek.com/thread/1960024/shogi-random-pieces-promoting-chess-queen-or-knight
+* https://boardgamegeek.com/thread/2055552/wa-shogi-game-1
