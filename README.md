@@ -190,6 +190,12 @@ pieces are in play compared to standard Shogi. There are several ways to do so:
 3. a drop cannot attack enemy pieces (including the King, excluding pawns)
 4. a drop cannot attack enemy pieces (including the King) or pawns
 
+Finally we could keep the standard starting position but choose N random pieces
+(including pawns, excluding king, rook or bishop) which will promote
+differently. For instance, with N=2, assuming they promote to different pieces
+(like Chess queen and Chess knight instead of Shogi gold), we get 17 * 16 = 272
+"different" starting positions.
+
 
 ## Play by forum
 
