@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import argparse
 import configparser
 import os
 from pathlib import PosixPath
@@ -17,6 +18,16 @@ LOGIN_URL = 'https://system.81dojo.com/en/players/sign_in'
 SEARCH_URL = 'https://system.81dojo.com/en/kifus/search/form'
 REFERER_URL = 'https://81dojo.com'
 KIFU_URL = 'https://system.81dojo.com/api/v2/kifus/{}.json'
+
+
+def parse_arguments():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('dir', help='Directory used to store games')
+    args = parser.parse_args()
+
+    if not os.path.isdir(args.dir):
+        sys.exit(args.dir + ' is not a directory')
+    return args.dir
 
 
 def get_user_password():
@@ -92,14 +103,15 @@ def get_game_ids(browser, user_config):
     return game_ids
 
 
-def save_games(game_ids, user_config):
+def save_games(game_ids, game_dir, user_config):
     with requests.Session() as session:
         session.headers.update({'Referer': REFERER_URL})
         for game_id in sorted(game_ids):
             print('Saving game {}'.format(game_id))
 
             kifu_url = KIFU_URL.format(game_id)
-            with open(os.path.basename(kifu_url), 'w') as f:
+            with open(os.path.join(game_dir, os.path.basename(kifu_url)),
+                      'w') as f:
                 f.write(session.get(kifu_url).text + '\n')
 
     user_config['latest_game_id'] = str(max(game_ids))
@@ -111,6 +123,7 @@ def save_config(config):
 
 
 def main():
+    game_dir = parse_arguments()
     user, password = get_user_password()
     config = get_config(user)
 
@@ -120,7 +133,7 @@ def main():
     game_ids = get_game_ids(browser, config[user])
     browser.close()
 
-    save_games(game_ids, config[user])
+    save_games(game_ids, game_dir, config[user])
     save_config(config)
 
 
