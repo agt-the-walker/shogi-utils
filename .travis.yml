@@ -1,10 +1,15 @@
-language: cpp
-compiler:
-  - clang
-  - gcc
-script: make
-before_install:
-  - sudo apt-get update -qq
-  - sudo apt-get install -y libboost-program-options-dev
-sudo: required
-dist: trusty
+matrix:
+  include:
+    - language: cpp
+      compiler:
+        - clang
+        - gcc
+      script: make
+      before_install:
+        - sudo apt-get update -qq
+        - sudo apt-get install -y libboost-program-options-dev
+      sudo: required
+      dist: trusty
+    - language: python
+      script: flake8 fetch-81dojo-games
+      sudo: false
