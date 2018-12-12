@@ -24,12 +24,14 @@ This program fetches all [81Dojo](https://81dojo.com/) games played by you.
 
 ### Usage
 
+Please run the following command the first time:
+
     # replace "Agt" and "hidden" below with your 81Dojo credentials
     $ echo 'machine system.81dojo.com login Agt password hidden' >>~/.netrc
 
-    $ cd ~/src/git/shogi-utils  # adapt accordingly
+Then:
 
-    $ mkdir ~/81Dojo  # adapt accordingly
+    $ mkdir -p ~/81Dojo  # adapt accordingly
 
     $ ./fetch-81dojo-games ~/81Dojo
     Searching all games
