@@ -1,2 +1,4 @@
 MechanicalSoup
+pexpect
+python-shogi
 requests
