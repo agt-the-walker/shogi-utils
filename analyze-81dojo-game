@@ -9,8 +9,18 @@ from shogi import Board, CSA
 ENGINE_DIR = '/usr/local/opt/elmo.sdt5'
 ENGINE_NAME = 'YaneuraOu-by-gcc'
 
-HASH_SIZE_IN_MB = 16 * 1024  # I have 32 Gb of RAM
-MIN_DEPTH = 20
+OPTIONS = {
+    'Hash': 16 * 1024,  # I.e. 16 Gb. I have 32 Gb of RAM
+
+    # thanks https://linuxfan.info/elmo-sdt5-on-linux
+    'BookDepthLimit': 0,
+    'BookMoves': 200,
+    'ConsiderBookMoveCount': True,
+    'NetworkDelay': 0,
+    'NetworkDelay2': 0,
+}
+
+MIN_DEPTH = 21
 
 
 def parse_game(f):
@@ -30,7 +40,8 @@ def analyze_game(game):
     child = pexpect.spawn(ENGINE_NAME, cwd=ENGINE_DIR)
     child.sendline('usi')
     child.expect('usiok')
-    child.sendline('setoption name Hash value {}'.format(HASH_SIZE_IN_MB))
+    for key, value in OPTIONS.items():
+        child.sendline('setoption name {} value {}'.format(key, value))
     child.sendline('isready')
     child.expect('readyok')
 
@@ -44,11 +55,13 @@ def analyze_game(game):
 
         info_line = ''
         while True:
-            line = child.readline().decode()
+            line = child.readline().decode().rstrip()
             if line.startswith('info'):
                 info_line = line
             elif line.startswith('bestmove '):
-                print(info_line + line)
+                print(info_line)
+                print(line)
+                print()
                 break
 
 
