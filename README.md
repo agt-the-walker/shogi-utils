@@ -205,3 +205,12 @@ I'd like to try:
 * https://boardgamegeek.com/thread/1949202/shogi-random-starting-position-and-pie-rule
 * https://boardgamegeek.com/thread/1960024/shogi-random-pieces-promoting-chess-queen-or-knight
 * https://boardgamegeek.com/thread/2055552/wa-shogi-game-1
+
+
+## Personal announcements
+
+* (2019-05-26) I'm looking for Shogi players in/around Zürich. My level is 7
+kyū according to [81Dojo](https://81dojo.com/en/). I can give/receive handicap, 
+and beginners are welcome. I speak French, English and Japanese (somewhat). If
+you're interested, send me an
+[email](mailto:boardgamegeek-user@MY\_GITHUB\_USERNAME.net)!
