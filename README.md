@@ -209,8 +209,8 @@ I'd like to try:
 
 ## Personal announcements
 
-* (2019-05-26) I'm looking for Shogi players in/around Zürich. My level is 7
-kyū according to [81Dojo](https://81dojo.com/en/). I can give/receive handicap, 
-and beginners are welcome. I speak French, English and Japanese (somewhat). If
-you're interested, send me an
+* (2019-05-26) I'm looking for Shogi players in/around Zürich (Switzerland). My
+level is 7 kyū according to [81Dojo](https://81dojo.com/en/). I can
+give/receive handicap, and beginners are welcome. I speak French, English and
+Japanese (somewhat). If you're interested, send me an
 [email](mailto:boardgamegeek-user@MY\_GITHUB\_USERNAME.net)!
