@@ -14,5 +14,5 @@ matrix:
       script: flake8 analyze-81dojo-game fetch-81dojo-games
       before_install:
         - sudo apt-get update -qq
-        - sudo apt-get install -y python-flake8
+        - sudo apt-get install -y flake8 python-flake8
       sudo: required
