@@ -204,6 +204,7 @@ differently. For instance, with N=2, assuming they promote to different pieces
 I'd like to try:
 * https://boardgamegeek.com/thread/1949202/shogi-random-starting-position-and-pie-rule
 * https://boardgamegeek.com/thread/1960024/shogi-random-pieces-promoting-chess-queen-or-knight
+* https://boardgamegeek.com/thread/2254276/shogi-random-piece-promoting-something-unusual-ins
 * https://boardgamegeek.com/thread/2055552/wa-shogi-game-1
 
 
