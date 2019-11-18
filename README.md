@@ -207,11 +207,14 @@ I'd like to try:
 * https://boardgamegeek.com/thread/2254276/shogi-random-piece-promoting-something-unusual-ins
 * https://boardgamegeek.com/thread/2055552/wa-shogi-game-1
 
+I'm also interested in unusual handicaps:
+* https://boardgamegeek.com/thread/2310051/shogi-different-armies
 
 ## Personal announcements
 
-* (2019-05-26) I'm looking for Shogi players in/around Zürich (Switzerland). My
-level is 7 kyū according to [81Dojo](https://81dojo.com/en/). I can
-give/receive handicap, and beginners are welcome. I speak French, English and
-Japanese (somewhat). If you're interested, send me an
+* (2019-11-18) I'm looking for Shogi (将棋) players in/around Zürich
+(Switzerland). My level is 5 kyū according to
+[81Dojo](https://81dojo.com/en/). I can give/receive handicap, and beginners
+are welcome. I speak French, English and Japanese (somewhat). If you're
+interested, send me an
 [email](mailto:boardgamegeek-user@MY\_GITHUB\_USERNAME.net)!
