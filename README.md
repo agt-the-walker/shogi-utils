@@ -205,6 +205,7 @@ I'd like to try:
 * https://boardgamegeek.com/thread/1949202/shogi-random-starting-position-and-pie-rule
 * https://boardgamegeek.com/thread/1960024/shogi-random-pieces-promoting-chess-queen-or-knight
 * https://boardgamegeek.com/thread/2254276/shogi-random-piece-promoting-something-unusual-ins
+* https://boardgamegeek.com/thread/2324959/sho-shogi-game-1-drops-promoted-drunken-elephant-i
 * https://boardgamegeek.com/thread/2055552/wa-shogi-game-1
 
 I'm also interested in unusual handicaps:
@@ -213,7 +214,7 @@ I'm also interested in unusual handicaps:
 ## Personal announcements
 
 * (2019-11-18) I'm looking for Shogi (将棋) players in/around Zürich
-(Switzerland). My level is 5 kyū according to
+(Switzerland). My level is 6 kyū according to
 [81Dojo](https://81dojo.com/en/). I can give/receive handicap, and beginners
 are welcome. I speak French, English and Japanese (somewhat). If you're
 interested, send me an
