@@ -137,10 +137,11 @@ N = Knight, etc.
 
 ## Article
 
-I like Shogi, but I also like other abstracts such as Arimaa and especially
-[Capablanca Random Chess](http://brainking.com/en/GameRules?tp=75), since I
-hate studying openings. For this reason, I'd like to try Shogi22680, but I'm
-also interested in [other board sizes and pieces](cheatsheet.md).
+I like Shogi, but I also like other abstracts such as
+[Arimaa](https://en.wikipedia.org/wiki/Arimaa) and especially [Capablanca
+Random Chess](http://brainking.com/en/GameRules?tp=75), since I hate studying
+openings. For this reason, I'd like to try Shogi22680 (see above), but I'm also
+interested in [other board sizes and pieces](cheatsheet.md).
 
 IMHO, a good Shogi variant:
 
@@ -168,15 +169,16 @@ on second row protected), which is acceptable.
 
 What if we only swap two pieces in the first row? In this case, we only have 33
 different starting positions, which is not enough. However if we also replace a
-random piece in the first row (except the king, obviously) by a random
-one introduced in Okisaki Shogi, then we get 33 * 8 * 3 = 792 different
-starting positions.
+random piece in the first row (except the king, obviously) by a random one
+introduced in [Okisaki Shogi](https://en.wikipedia.org/wiki/Okisaki_shogi),
+then we get 33 * 8 * 3 = 792 different starting positions.
 
 Using new pieces is not without consequences. Indeed how many points do they
-score as far as the Jishogi rule is concerned? Therefore this rule should
-probably be replaced by the Try rule, where another way to win would be to
-bring one's king to the original square of the opponent's king (if this square
-is not controlled by enemy pieces).
+score as far as the [Jishogi](https://en.wikipedia.org/wiki/Shogi#Impasse) rule
+is concerned? Therefore this rule should probably be replaced by the [Try
+Rule](https://en.wikipedia.org/wiki/Shogi#Amateur_resolutions), where another
+way to win would be to bring one's king to the original square of the
+opponent's king (if this square is not controlled by enemy pieces).
 
 Moreover we could keep the standard starting position but choose N random
 pieces (including pawns, excluding king, rook or bishop) which will promote
@@ -186,8 +188,9 @@ differently. For instance, with N=2, assuming they promote to different pieces
 piece of each type promotes as usual).
 
 Finally we could choose a random piece in the first row (except the king,
-obviously) which will become a random one introduced in Wa Shogi the first time
-it is captured. In that case we get 8 * 15 = 120 "different" starting positions.
+obviously) which will become a random one introduced in [Wa
+Shogi](https://en.wikipedia.org/wiki/Wa_shogi) the first time it is captured.
+In that case we get 8 * 15 = 120 "different" starting positions.
 
 ## Play by forum
 
