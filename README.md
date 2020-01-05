@@ -168,14 +168,14 @@ on second row protected), which is acceptable.
 
 What if we only swap two pieces in the first row? In this case, we only have 33
 different starting positions, which is not enough. However if we also replace a
-random piece in the first row (except the King, obviously) by a random
+random piece in the first row (except the king, obviously) by a random
 one introduced in Okisaki Shogi, then we get 33 * 8 * 3 = 792 different
 starting positions.
 
 Using new pieces is not without consequences. Indeed how many points do they
 score as far as the Jishogi rule is concerned? Therefore this rule should
 probably be replaced by the Try rule, where another way to win would be to
-bring one's King to the original square of the opponent's King (if this square
+bring one's king to the original square of the opponent's king (if this square
 is not controlled by enemy pieces).
 
 Moreover we could keep the standard starting position but choose N random
@@ -185,7 +185,7 @@ differently. For instance, with N=2, assuming they promote to different pieces
 "different" starting positions (264 if we want to ensure that at least one
 piece of each type promotes as usual).
 
-Finally we could choose a random piece in the first row (except the King,
+Finally we could choose a random piece in the first row (except the king,
 obviously) which will become a random one introduced in Wa Shogi the first time
 it is captured. In that case we get 8 * 15 = 120 "different" starting positions.
 
