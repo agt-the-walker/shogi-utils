@@ -172,32 +172,22 @@ random piece in the first row (except the King, obviously) by a random
 one introduced in Okisaki Shogi, then we get 33 * 8 * 3 = 792 different
 starting positions.
 
-Another option to get more starting positions would be to add a piece, either
-placed midway between the bishop and the rook, or in hand, to be introduced
-whenever the player moves a piece in the first row from its starting position,
-like in [Seirawan Chess](https://en.wikipedia.org/wiki/Seirawan_chess). For
-instance, if we swap two pieces in the first row then add a random one
-introduced in Wa Shogi, then we get 33 * 15 = 495 different starting positions.
-
-Adding new pieces is not without consequences. Firstly, the Jishogi rule should
+Using new pieces is not without consequences. Indeed how many points do they
+score as far as the Jishogi rule is concerned? Therefore this rule should
 probably be replaced by the Try rule, where another way to win would be to
 bring one's King to the original square of the opponent's King (if this square
-is not controlled by enemy pieces). In any case, the Jishogi rule looks rather
-artificial to me, whereas the Try rule works with other board sizes and/or
-pieces. Secondly, it might be advisable to restrict drops if too many/powerful
-pieces are in play compared to standard Shogi. There are several ways to do so:
+is not controlled by enemy pieces).
 
-1. a non-pawn drop cannot checkmate
-2. a drop cannot check
-3. a drop cannot attack enemy pieces (including the King, excluding pawns)
-4. a drop cannot attack enemy pieces (including the King) or pawns
-
-Finally we could keep the standard starting position but choose N random pieces
-(including pawns, excluding king, rook or bishop) which will promote
+Moreover we could keep the standard starting position but choose N random
+pieces (including pawns, excluding king, rook or bishop) which will promote
 differently. For instance, with N=2, assuming they promote to different pieces
 (like Chess queen and Chess knight instead of Shogi gold), we get 17 * 16 = 272
-"different" starting positions.
+"different" starting positions (264 if we want to ensure that at least one
+piece of each type promotes as usual).
 
+Finally we could choose a random piece in the first row (except the King,
+obviously) which will become a random one introduced in Wa Shogi the first time
+it is captured. In that case we get 8 * 15 = 120 "different" starting positions.
 
 ## Play by forum
 
