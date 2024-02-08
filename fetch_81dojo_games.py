@@ -55,7 +55,8 @@ def get_config(user):
 def fetch_stats(browser, user, user_config):
     browser.open(PLAYER_URL.format(user))
     page = browser.get_current_page()
-    current_stats = page.find(text='Games').find_next('td').contents[0].strip()
+    current_stats = page.find(string='Games').find_next('td').contents[0]\
+                        .strip()
 
     if current_stats == user_config['stats']:
         sys.exit('No game since last run')
@@ -97,7 +98,7 @@ def get_game_ids(browser, user_config):
 
                 game_ids.add(int(game_id))
 
-        if not page.find(text='Number of matching kifus reached your limit.'):
+        if not page.find(string='Number of matching kifus reached your limit.'):
             break
 
     return game_ids
