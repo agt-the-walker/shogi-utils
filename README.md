@@ -206,9 +206,11 @@ I'm also interested in unusual handicaps:
 
 ## Personal announcements
 
-* (2022-05-26) I'm looking for Shogi (将棋) players in/around Lausanne
-(Switzerland). My level is 5 kyū according to
-[81Dojo](https://81dojo.com/en/). I can give/receive handicap, and beginners
-are welcome. I speak French, English and Japanese (somewhat). If you're
-interested, send me an
+* (2024-02-20) I'm looking for Shogi (将棋) players in/around Lausanne
+(Switzerland). My level is:
+    * 6 kyū (ELO 1180) according to [81Dojo](https://81dojo.com/en/)
+    * 8 kyū (ELO 1180) according to [FESA](https://fesashogi.eu/index.php?mid=5).
+
+I can give/receive handicap, and beginners are welcome. I speak French, English
+and Japanese (somewhat). If you're interested, send me an
 [email](mailto:boardgamegeek-user@MY\_GITHUB\_USERNAME.net)!
