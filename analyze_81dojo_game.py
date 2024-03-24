@@ -6,16 +6,12 @@ import sys
 import pexpect
 from shogi import Board, CSA
 
-ENGINE_DIR = '/usr/local/opt/elmo.sdt5'
+ENGINE_DIR = '/usr/local/opt/suisho5'
 ENGINE_NAME = 'YaneuraOu-by-gcc'
 
 OPTIONS = {
-    'Hash': 16 * 1024,  # I.e. 16 Gb. I have 32 Gb of RAM
+    'USI_Hash': 20 * 1024,  # I.e. 20 Gb. I have 32 Gb of RAM
 
-    # thanks https://linuxfan.info/elmo-sdt5-on-linux
-    'BookDepthLimit': 0,
-    'BookMoves': 200,
-    'ConsiderBookMoveCount': True,
     'NetworkDelay': 0,
     'NetworkDelay2': 0,
 }
@@ -37,7 +33,7 @@ def parse_game(f):
 
 
 def analyze_game(game):
-    child = pexpect.spawn(ENGINE_NAME, cwd=ENGINE_DIR)
+    child = pexpect.spawn(ENGINE_NAME, cwd=ENGINE_DIR, timeout=None)
     child.sendline('usi')
     child.expect('usiok')
     for key, value in OPTIONS.items():
