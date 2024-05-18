@@ -63,7 +63,7 @@ int main(int argc, char **argv)
         return 1;
     }
 
-    // piece abbreviations come from http://en.wikipedia.org/wiki/Shogi
+    // piece abbreviations come from https://en.wikipedia.org/wiki/Shogi
     std::string first_row("LNSGKGSNL");
     std::sort(first_row.begin(), first_row.end());
 

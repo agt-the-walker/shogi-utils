@@ -70,10 +70,10 @@ N = Knight, etc.
 
 ### Requirements
 
-* [Boost Program Options](http://www.boost.org/doc/libs/1_57_0/doc/html/program_options.html)
-* [GNU Compiler Collection (GCC)](http://www.gnu.org/software/gcc/), recent 
+* [Boost Program Options](https://www.boost.org/doc/libs/1_85_0/doc/html/program_options.html)
+* [GNU Compiler Collection (GCC)](https://www.gnu.org/software/gcc/), recent
   enough to support C++11
-* [GNU Make](http://www.gnu.org/software/make/)
+* [GNU Make](https://www.gnu.org/software/make/)
 
 
 ### Usage
@@ -127,7 +127,7 @@ N = Knight, etc.
 
 * http://www.shogi.net/shogi-l/Archive/2007/Nmar16-03.txt: introduced
   Shogi22680
-* http://en.wikipedia.org/wiki/Capablanca_random_chess: one of the rules is
+* https://en.wikipedia.org/wiki/Capablanca_random_chess: one of the rules is
   "All pawns must be protected in initial setup", which provided inspiration
   for the `--protect` and `--protect-more` options.
 
@@ -139,7 +139,7 @@ N = Knight, etc.
 
 I like Shogi, but I also like other abstracts such as
 [Arimaa](https://en.wikipedia.org/wiki/Arimaa) and especially [Capablanca
-Random Chess](http://brainking.com/en/GameRules?tp=75), since I hate studying
+Random Chess](https://brainking.com/en/GameRules?tp=75), since I hate studying
 openings. For this reason, I'd like to try Shogi22680 (see above), but I'm also
 interested in [other board sizes and pieces](cheatsheet.md).
 

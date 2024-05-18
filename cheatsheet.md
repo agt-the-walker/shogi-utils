@@ -143,7 +143,7 @@ pieces, as suggested in [this page](README.md).
 
 ## SFEN notation
 
-[Forsyth-Edwards notation for shogi](http://shogi.typepad.jp/brainstorm/2007/01/post_11a0.html)
+[Forsyth-Edwards notation for shogi](https://en.wikipedia.org/wiki/Shogi_notation#SFEN)
 can be used. Tori and Okisaki pieces will be followed by a single-quote
 character while Wa pieces (2 characters) will be followed by @. For instance:
 * `RR@`: sente's 兎 (RR) from Wa shogi
@@ -196,7 +196,7 @@ the following notation (␣ being the symbol for a space):
 
 ## ASCII diagrams
 
-http://github.com/gunyarakun/python-shogi shows an example for standard Shogi
+https://github.com/gunyarakun/python-shogi shows an example for standard Shogi
 ("Show a simple ASCII board"). Since we only have enough space for three
 characters per piece (including + for promotions), I propose the following
 notation for non-standard pieces:
