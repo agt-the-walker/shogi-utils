@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/agt-the-walker/shogi-utils.svg?branch=master)](https://travis-ci.org/agt-the-walker/shogi-utils)
-
+![Python workflow](https://github.com/agt-the-walker/shogi-utils/actions/workflows/pythonapp.yml/badge.svg)
+![C++ workflow](https://github.com/agt-the-walker/shogi-utils/actions/workflows/cpp.yml/badge.svg)
 
 # Table of contents
 
