@@ -17,7 +17,7 @@ This program fetches all [81Dojo](https://81dojo.com/) games played by you.
 
 ### Requirements
 
-* [Python](https://www.python.org/) 3.4+
+* [Python](https://www.python.org/) 3.8+
 * [MechanicalSoup](https://pypi.org/project/MechanicalSoup/) Python package
 * [Requests](https://pypi.org/project/requests/) Python package
 
