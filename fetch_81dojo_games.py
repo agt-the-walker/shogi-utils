@@ -98,7 +98,8 @@ def get_game_ids(browser, user_config):
 
                 game_ids.add(int(game_id))
 
-        if not page.find(string='Number of matching kifus reached your limit.'):
+        if not page.find(
+                string='Number of matching kifus reached your limit.'):
             break
 
     return game_ids
