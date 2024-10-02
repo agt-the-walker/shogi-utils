@@ -1,4 +1,5 @@
 MechanicalSoup
+lxml
 pexpect
 python-shogi
 requests

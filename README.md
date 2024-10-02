@@ -62,6 +62,37 @@ unnecessary searches, especially considering they do cost
 [D-Miles](https://81dojo.com/documents/81Dojo_Mileage).
 
 
+## parse_bga_game.py
+
+This program converts a [BGA](https://boardgamearena.com/) "Replay Shogi" HTML
+page into CSA format, which can be loaded into [Shogi
+Playground](https://play.mogproject.com/), etc.
+
+### Requirements
+
+* [Python](https://www.python.org/) 3.8+
+* [lxml](https://pypi.org/project/lxml/) Python package
+* [python-shogi](https://pypi.org/project/python-shogi/) Python package
+
+### Usage
+
+Using Firefox, log into BGA, open
+https://boardgamearena.com/gamereview?table=569396904 (replace accordingly),
+perform "Save Page As" using "Web Page, Complete" (even if the folder won't be
+used). Then:
+
+    $ ./parse_bga_game.py <'Replay Shogi #569396904 • Board Game Arena.html'
+    N+Agt the Walker
+    N-AtThat
+    PI
+    +
+    +2726FU
+    -3334FU
+    [...]
+    +2122RY
+    %TORYO
+
+
 ## shuffle-first-row
 
 This program prints Shogi22680 positions with optional restrictions. K = King,
