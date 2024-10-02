@@ -10,7 +10,7 @@
 # Utilities
 
 
-## fetch-81dojo-games
+## fetch_81dojo_games.py
 
 This program fetches all [81Dojo](https://81dojo.com/) games played by you.
 
@@ -33,18 +33,18 @@ Then:
 
     $ mkdir -p ~/81Dojo  # adapt accordingly
 
-    $ ./fetch-81dojo-games ~/81Dojo
+    $ ./fetch_81dojo_games.py ~/81Dojo
     Searching all games
     Limit reached. Also searching games until 2018-04-22
     Saving game 2692582
     [...]
     Saving game 3447638
 
-    $ ./fetch-81dojo-games ~/81Dojo
+    $ ./fetch_81dojo_games.py ~/81Dojo
     No game since last run
 
     # after playing a few games
-    $ ./fetch-81dojo-games ~/81Dojo
+    $ ./fetch_81dojo_games.py ~/81Dojo
     Searching all games
     Saving game 3450595
     Saving game 3451125
