@@ -78,7 +78,11 @@ def get_game_ids(browser, user_config):
     while True:
         browser.open(SEARCH_URL)
         browser.select_form()
-        browser['conditions[search_from]'] = '1970-01-01'  # Unix Epoch
+        try:
+            browser['conditions[search_from]'] = '1970-01-01'  # Unix Epoch
+        except mechanicalsoup.utils.LinkNotFoundError:  # not enough D-Miles
+            pass
+
         if oldest_date:
             print('Limit reached. Also searching games until ' + oldest_date)
             browser['conditions[search_until]'] = oldest_date
