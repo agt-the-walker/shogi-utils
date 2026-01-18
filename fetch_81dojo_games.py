@@ -4,6 +4,7 @@ import argparse
 import configparser
 import os
 from pathlib import PosixPath
+import re
 import sys
 from urllib.parse import urlparse
 
@@ -55,8 +56,16 @@ def get_config(user):
 def fetch_stats(browser, user, user_config):
     browser.open(PLAYER_URL.format(user))
     page = browser.get_current_page()
-    current_stats = page.find(string='Games').find_next('td').contents[0]\
-                        .strip()
+
+    main_stats = page.find(string='Games').find_next('td').contents[0].strip()
+    other_stats = []
+    for td in page.find_all('td'):
+        contents = td.contents
+        if contents:
+            m = re.match(r'\d EXP$', contents[0].get_text())
+            if m:
+                other_stats.append(m[0])
+    current_stats = '|'.join([main_stats] + other_stats)
 
     if current_stats == user_config['stats']:
         sys.exit('No game since last run')
