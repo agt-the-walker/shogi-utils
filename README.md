@@ -93,6 +93,33 @@ used). Then:
     %TORYO
 
 
+## parse_pychess_game.py
+
+This program converts a [PyChess](https://www.pychess.org/) Shogi PGN file into
+CSA format, which can be loaded into [Shogi
+Playground](https://play.mogproject.com/), etc.
+
+### Requirements
+
+* [Python](https://www.python.org/) 3.8+
+* [python-shogi](https://pypi.org/project/python-shogi/) Python package
+
+### Usage
+
+Using Firefox, open https://www.pychess.org/fNBhykDr?ply=0 (replace
+accordingly), click on "FEN & PGN" followed by "Download PGN". Then:
+
+    $ ./parse_bga_game.py <pychess-variants_fNBhykDr
+    N+agt_the_walker
+    N-chezz
+    PI
+    +
+    +2726FU
+    -3334FU
+    [...]
+    -0096KY
+
+
 ## shuffle-first-row
 
 This program prints Shogi22680 positions with optional restrictions. K = King,
