@@ -43,41 +43,46 @@ def parse_abbreviated_move_components(board, piece, to_square, promotion):
              format(piece, to_square, promotion))
 
 
-csa_moves = []
-resignation = False
+def main():
+    csa_moves = []
+    resignation = False
 
-tree = html.parse(sys.stdin)
-board = shogi.Board()
-num_players_seen = 0
-for div in tree.xpath('//div[contains(@class, "gamelogreview")]'):
-    m = re.match(r'(.+) plays (\S+)', div.text)
-    if m:
-        if num_players_seen < 2:
-            print('N' + CSA.COLOR_SYMBOLS[num_players_seen] + m[1])
-            num_players_seen += 1
+    tree = html.parse(sys.stdin)
+    board = shogi.Board()
+    num_players_seen = 0
+    for div in tree.xpath('//div[contains(@class, "gamelogreview")]'):
+        m = re.match(r'(.+) plays (\S+)', div.text)
+        if m:
+            if num_players_seen < 2:
+                print('N' + CSA.COLOR_SYMBOLS[num_players_seen] + m[1])
+                num_players_seen += 1
 
-        move = parse_move(board, m[2])
-        turn = board.turn
-        board.push(move)
+            move = parse_move(board, m[2])
+            turn = board.turn
+            board.push(move)
 
-        if move.from_square is None:
-            from_square = '00'
-            piece_type = move.drop_piece_type
-        else:
-            from_square = CSA.SQUARE_NAMES[move.from_square]
-            piece_type = board.piece_at(move.to_square).piece_type
-        csa_moves.append(CSA.COLOR_SYMBOLS[turn] +
-                         from_square +
-                         CSA.SQUARE_NAMES[move.to_square] +
-                         CSA.PIECE_SYMBOLS[piece_type])
+            if move.from_square is None:
+                from_square = '00'
+                piece_type = move.drop_piece_type
+            else:
+                from_square = CSA.SQUARE_NAMES[move.from_square]
+                piece_type = board.piece_at(move.to_square).piece_type
+            csa_moves.append(CSA.COLOR_SYMBOLS[turn] +
+                             from_square +
+                             CSA.SQUARE_NAMES[move.to_square] +
+                             CSA.PIECE_SYMBOLS[piece_type])
 
-    elif div.text.endswith(' resigned'):
-        resignation = True
-        break
+        elif div.text.endswith(' resigned'):
+            resignation = True
+            break
 
-print('PI')
-print('+')
-for csa_move in csa_moves:
-    print(csa_move)
-if resignation:
-    print('%TORYO')
+    print('PI')
+    print('+')
+    for csa_move in csa_moves:
+        print(csa_move)
+    if resignation:
+        print('%TORYO')
+
+
+if __name__ == '__main__':
+    main()
