@@ -109,7 +109,7 @@ Playground](https://play.mogproject.com/), etc.
 Using Firefox, open https://www.pychess.org/fNBhykDr?ply=0 (replace
 accordingly), click on "FEN & PGN" followed by "Download PGN". Then:
 
-    $ ./parse_bga_game.py <pychess-variants_fNBhykDr
+    $ ./parse_pychess_game.py <pychess-variants_fNBhykDr
     N+agt_the_walker
     N-chezz
     PI
