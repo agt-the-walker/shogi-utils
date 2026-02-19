@@ -31,16 +31,22 @@ def fix_piece(piece):
     return piece
 
 
+def possible_pieces(piece):
+    # PyChess PGN "forgets" the unpromoted version of the piece
+    if piece == 'G':
+        return ['G', '+P', '+L', '+N', '+S']
+    else:
+        return [fix_piece(piece)]
+
+
 def parse_move(board, move):
     if m := re.match(r'([A-Z])\@(\w{2})', move):  # drop
         return shogi.Move.from_usi(fix_piece(m[1]) + '*' + fix_square(m[2]))
     elif m := re.match(r'([A-Z])x?([a-i])?([1-9])?(\w{2})(=?)',
                        move):  # move/capture
-        piece = fix_piece(m[1])
         return parse_abbreviated_move_components(
                 board,
-                shogi.Piece.from_symbol(
-                    piece if board.turn == shogi.BLACK else piece.lower()),
+                m[1],
                 fix_column(m[2]) if m[2] else None,
                 fix_row(m[3]) if m[3] else None,
                 fix_square(m[4]),
@@ -51,8 +57,11 @@ def parse_move(board, move):
 
 def parse_abbreviated_move_components(board, piece, from_column, from_row,
                                       to_square, promotion):
+    pieces = [shogi.Piece.from_symbol(
+                  p if board.turn == shogi.BLACK else p.lower())
+              for p in possible_pieces(piece)]
     for move in board.legal_moves:
-        if board.piece_at(move.from_square) == piece and \
+        if board.piece_at(move.from_square) in pieces and \
            (not from_column or
             shogi.SQUARE_NAMES[move.from_square][0] == from_column) and \
            (not from_row or
