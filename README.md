@@ -257,17 +257,16 @@ I'd like to try:
 * https://boardgamegeek.com/thread/1960024/shogi-random-pieces-promoting-chess-queen-or-knight
 * https://boardgamegeek.com/thread/2254276/shogi-random-piece-promoting-something-unusual-ins
 * https://boardgamegeek.com/thread/2324959/sho-shogi-game-1-drops-promoted-drunken-elephant-i
-* https://boardgamegeek.com/thread/2055552/wa-shogi-game-1
 
 I'm also interested in unusual handicaps:
 * https://boardgamegeek.com/thread/2310051/shogi-different-armies
 
 ## Personal announcements
 
-* (2024-02-20) I'm looking for Shogi (将棋) players in/around Lausanne
+* (2026-07-31) I'm looking for Shogi (将棋) players in/around Lausanne
 (Switzerland). My level is:
-    * 6 kyū (ELO 1180) according to [81Dojo](https://81dojo.com/en/)
-    * 8 kyū (ELO 1180) according to [FESA](https://fesashogi.eu/index.php?mid=5).
+    * 5 kyū (ELO 1159) according to [81Dojo](https://81dojo.com/en/)
+    * 8 kyū (ELO 1180) according to [FESA](https://fesashogi.eu/).
 
 I can give/receive handicap, and beginners are welcome. I speak French, English
 and Japanese (somewhat). If you're interested, send me an
